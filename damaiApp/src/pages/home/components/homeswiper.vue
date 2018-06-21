@@ -23,13 +23,13 @@ export default {
           id: '0001',
           imgUrl: '../../../../static/imgs/1.png'
         }, {
-          id: '0001',
+          id: '0002',
           imgUrl: '../../../../static/imgs/1.png'
         }, {
-          id: '0001',
+          id: '0003',
           imgUrl: '../../../../static/imgs/1.png'
         }, {
-          id: '0001',
+          id: '0004',
           imgUrl: '../../../../static/imgs/1.png'
         }
       ]
