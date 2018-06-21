@@ -26,7 +26,7 @@ export default {
     height: 0.84rem;
     width: 100%;
     line-height: 0.84rem;
-    padding: 0 0.2rem;
+    padding: 0 0.2rem 0;
     display: flex;
     box-sizing: border-box;
     position: fixed;
