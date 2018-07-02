@@ -1,12 +1,14 @@
 <template>
   <div class="top">
-    <div class="top-pos">
+    <router-link to='/city'>
+      <div class="top-pos">
       <span class="iconfont">&#xe645;</span>
-      北京
+      {{this.city}}
     </div>
+    </router-link>
     <div class="top-mid">
       <span class="iconfont">&#xe639;</span>
-      影子神偷
+      <input type="text" placeholder="影子神偷" class="top-mid-input">
     </div>
     <div class="top-right">
       <span class="iconfont scan">&#xe633;</span>
@@ -17,7 +19,10 @@
 
 <script>
 export default {
-  name: 'homeheader'
+  name: 'homeheader',
+  props: {
+    city: String
+  }
 }
 </script>
 
@@ -41,6 +46,7 @@ export default {
     float: left;
     font-size: 0.26rem;
     padding-right: 0.1rem;
+    color: #000000;
   }
   .top-pos .iconfont{
     font-size: 0.3rem;
@@ -49,18 +55,28 @@ export default {
   .top-mid{
     color: #aeaeae;
     flex: 1;
-    background: #f3f3f3;
-    border-radius: 0.2rem;
     padding-left: .1rem;
-    height:.4rem;
-    line-height: .4rem;
+    height: 100%;
     text-align:left;
-    margin-top: 0.2rem;
     font-size: .1rem;
+    position: relative;
+  }
+  .top-mid-input{
+    width: 100%;
+    border-radius: .2rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top:25%;
+    background: #f3f3f3;
+    text-indent: .5rem;
   }
   .top-mid .iconfont{
     font-size: 0.3rem;
     margin-right: 0.05rem;
+    position: absolute;
+    left: .1rem;
+    z-index: 10;
   }
   .top-right{
     width:1rem;
