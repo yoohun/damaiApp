@@ -46,7 +46,7 @@ export default {
         id: '0008',
         iconImg: '../../../../static/imgs/icon5.png',
         iconDesc: '电影'
-      }, ]
+      }]
     }
   }
 }
