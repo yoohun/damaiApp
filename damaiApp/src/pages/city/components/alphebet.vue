@@ -1,28 +1,15 @@
 <template>
     <ul class="alphebet">
-      <li class="alphebetLitem">A</li>
-      <li class="alphebetLitem">B</li>
-      <li class="alphebetLitem">C</li>
-      <li class="alphebetLitem">D</li>
-      <li class="alphebetLitem">E</li>
-      <li class="alphebetLitem">F</li>
-      <li class="alphebetLitem">G</li>
-      <li class="alphebetLitem">H</li>
-      <li class="alphebetLitem">A</li>
-      <li class="alphebetLitem">B</li>
-      <li class="alphebetLitem">C</li>
-      <li class="alphebetLitem">D</li>
-      <li class="alphebetLitem">E</li>
-      <li class="alphebetLitem">F</li>
-      <li class="alphebetLitem">G</li>
-      <li class="alphebetLitem">H</li>
-      <li class="alphebetLitem">I</li>
+      <li class="alphebetLitem" v-for="(item,key) of allcity" :key="key">{{key}}</li>
     </ul>
 </template>
 
 <script>
 export default {
-  name: 'alphebet'
+  name: 'alphebet',
+  props: {
+    allcity: Object
+  }
 }
 </script>
 
@@ -36,11 +23,10 @@ export default {
     top:.78rem;
     bottom: 0;
     width: .4rem;
-    background: #25a4bb;
     text-align: center;
   }
   .alphebetLitem{
-    font-size: .26rem;
-    line-height: .38rem;
+    font-size: .1rem;
+    line-height: .3rem;
   }
 </style>

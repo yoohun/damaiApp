@@ -1,6 +1,6 @@
 <template>
   <div class="midIcon">
-    <div class="icon" v-for="item of iconList" :key="item.id">
+    <div class="icon" v-for="item of iconLista" :key="item.id">
       <div class="iconImg">
         <img :src="item.iconImg" alt="" class="icon-imgs">
       </div>
@@ -14,6 +14,43 @@ export default {
   name: 'homeicon',
   props: {
     iconList: Array
+  },
+  data () {
+    return {
+      iconLista: [{
+        id: '0001',
+        iconImg: '../../../../static/imgs/icon1.png',
+        iconDesc: '演唱会'
+      }, {
+        id: '0002',
+        iconImg: '../../../../static/imgs/icon2.png',
+        iconDesc: '话剧歌剧'
+      }, {
+        id: '0003',
+        iconImg: '../../../../static/imgs/icon3.png',
+        iconDesc: '音乐会'
+      }, {
+        id: '0004',
+        iconImg: '../../../../static/imgs/icon4.png',
+        iconDesc: '体育'
+      }, {
+        id: '0005',
+        iconImg: '../../../../static/imgs/icon8.png',
+        iconDesc: '曲苑杂坛'
+      }, {
+        id: '0006',
+        iconImg: '../../../../static/imgs/icon7.png',
+        iconDesc: '亲子'
+      }, {
+        id: '0007',
+        iconImg: '../../../../static/imgs/icon6.png',
+        iconDesc: '展览休闲'
+      }, {
+        id: '0008',
+        iconImg: '../../../../static/imgs/icon5.png',
+        iconDesc: '电影'
+      }]
+    }
   }
 }
 </script>

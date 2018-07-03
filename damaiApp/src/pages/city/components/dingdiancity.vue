@@ -4,7 +4,7 @@
       <div class="poCity">
         <div class="dwDiv">当前定位城市</div>
         <div class="dqCity">
-          <span class="localCity">北京</span>
+          <span class="localCity">{{this.city}}</span>
           <div class="cxdw">
             <span class="iconfont">&#xe645;</span>
             重新定位
@@ -16,26 +16,8 @@
           热门城市
         </div>
         <div class="cityList">
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
-          </div>
-          <div class="cityItem">
-            北京
+          <div class="cityItem" v-for="city of hotcity" :key="city.id">
+            {{city.name}}
           </div>
         </div>
       </div>
@@ -46,17 +28,10 @@
           </div>
         </div>
         <div class="cityName">
-          <div class="area">
-            <div class="cityAlphe">A</div>
+          <div class="area" v-for="(cities, key) of allcity" :key="key">
+            <div class="cityAlphe">{{key}}</div>
             <div class="cityAlpheList">
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
+              <div class="cityAlpheItem" v-for="innerItem of cities" :key="innerItem.id">{{innerItem.name}}</div>
             </div>
           </div>
           <div class="area">
@@ -108,6 +83,11 @@
 import Bscroll from 'better-scroll'
 export default {
   name: 'ddcity',
+  props: {
+    city: String,
+    hotcity: Array,
+    allcity: Object
+  },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
   }
@@ -122,7 +102,6 @@ export default {
   left: 0;
   right:0;
   bottom:0;
-  border: 1px solid;
 }
 .dwDiv{
   height: .48rem;
