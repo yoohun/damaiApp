@@ -58,18 +58,21 @@ export default {
   .mainTitle{
     padding: 0 0.1rem;
   }
+  .tyjjImg{
+    padding: 0 .1rem;
+  }
   .tyRow{
     height: 0;
     padding-bottom: 92.5%;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .tyItem{
     color: black;
     padding-bottom: 46.25%;
-    padding-left: .1rem;
-    padding-right: .1rem;
-    box-sizing: border-box;
-    width: 50%;
+    width: 48%;
     float: left;
     height: 0;
   }

@@ -8,27 +8,18 @@
       <img src="../../../../static/imgs/7.png" alt="">
     </div>
     <div class="ychbtm">
-      <div class="ychbtmItem">
-          <img src="../../../../static/imgs/10.png" alt="">
-          <div class="ychbtmText">
-            <div class="ychbtmTextT">2018华晨宇“火星”鸟巢演唱会</div>
-            <div class="ychbtmTextTime">2018.09.08 19:00</div>
+      <swiper :options="swiperOption">
+        <swiper-slide v-for="(page, index) of pages" :key="index">
+          <div class="ychbtmItem" v-for="itemList of page" :key="itemList.id">
+            <img :src="itemList.img" alt="">
+            <div class="ychbtmText">
+              <div class="ychbtmTextT">{{itemList.title}}</div>
+              <div class="ychbtmTextTime">{{itemList.time}}</div>
+            </div>
           </div>
-        </div>
-      <div class="ychbtmItem">
-        <img src="../../../../static/imgs/10.png" alt="">
-        <div class="ychbtmText">
-          <div class="ychbtmTextT">2018华晨宇“火星”鸟巢演唱会</div>
-          <div class="ychbtmTextTime">2018.09.08 19:00</div>
-        </div>
-      </div>
-      <div class="ychbtmItem">
-        <img src="../../../../static/imgs/10.png" alt="">
-        <div class="ychbtmText">
-          <div class="ychbtmTextT">2018华晨宇“火星”鸟巢演唱会</div>
-          <div class="ychbtmTextTime">2018.09.08 19:00</div>
-        </div>
-      </div>
+        </swiper-slide>
+        <div class="swiper-pagination"  slot="pagination"></div>
+      </swiper>
     </div>
     <div class="mainychBImg">
       <div class="mainychImg" v-for="item of ychSImg" :key="item.id">
@@ -47,6 +38,100 @@ export default {
   name: 'ych',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination'
+      },
+      ychItem: [{
+        id: '01',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '02',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '03',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '04',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '05',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '06',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '07',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '08',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '09',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '10',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '11',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '12',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '13',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '14',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '15',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '16',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '17',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }, {
+        id: '18',
+        title: '2018华晨宇“火星”鸟巢演唱会',
+        time: '2018.09.08 19:00',
+        img: '../../../../static/imgs/10.png'
+      }],
       ychSImg: [{
         id: '001',
         imgUrl: '../../../../static/imgs/16.png',
@@ -64,11 +149,41 @@ export default {
         imgDesc: '免费去现场'
       }]
     }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.ychItem.forEach((item, index) => {
+        const page = Math.floor(index / 6)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
   }
 }
 </script>
 
 <style>
+  .ychbtm .swiper-container{
+    width: 100%;
+    padding: 0;
+    height: 0;
+    padding-bottom: 128%;
+  }
+  .ychbtm .swiper-slide{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .ychbtm .swiper-pagination-bullet{
+    width: .4rem;
+    height: .05rem;
+    border-radius: .025rem;
+    background: #f8166a;
+  }
   .mainych{
     height: auto;
     padding: 0 0.2rem 0.5rem;
@@ -80,15 +195,13 @@ export default {
   .ychImg img{
     height: 2.7rem;
   }
-  .ychbtm{
-    display: flex;
-  }
   .ychbtmItem{
-    flex: 1;
-    border: 1px solid;
+    width: 32%;
+    display: inline-block;
+    margin-bottom: .2rem;
   }
   .ychbtm img{
-    height:  2.7rem;
+    width: 100%;
   }
   .ychbtmTextT{
     font-size: .22rem;
@@ -110,10 +223,10 @@ export default {
   .mainychBImg{
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
   .mainychImg{
-    flex: 1;
-    margin-right: .1rem;
+    width: 32%;
     position: relative;
   }
   .mainychImg:nth-child(3){

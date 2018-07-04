@@ -9,15 +9,20 @@
     </div>
     <div class="ychbtm">
       <div class="ychRow">
-        <div class="ychItem" v-for="item of tyItem" :key="item.id">
-          <img :src="item.imgUrl" alt="">
-          <div class="hwxcDivName">
-            <div class="hwxcDivNameAll">
-              <div class="hwxcDivNameTop">{{item.tyTitle}}</div>
-              <div class="hwxcDivNameBottom">{{item.tyDesc}}</div>
+        <swiper :options="swiperOption">
+          <swiper-slide v-for="(papage, index) of pages" :key="index">
+            <div class="ychItem" v-for="item of papage" :key="item.id">
+              <img :src="item.imgUrl" alt="">
+              <div class="hwxcDivName">
+                <div class="hwxcDivNameAll">
+                  <div class="hwxcDivNameTop">{{item.tyTitle}}</div>
+                  <div class="hwxcDivNameBottom">{{item.tyDesc}}</div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+          </swiper-slide>
+          <div class="swiper-pagination"  slot="pagination"></div>
+        </swiper>
       </div>
     </div>
   </div>
@@ -28,6 +33,9 @@ export default {
   name: 'hjyyj',
   data () {
     return {
+      swiperOption: {
+        pagination: '.swiper-pagination'
+      },
       tyItem: [{
         id: '001',
         imgUrl: '../../../../static/imgs/10.png',
@@ -65,6 +73,19 @@ export default {
         tyDesc: '2018.09.08 19:00'
       }]
     }
+  },
+  computed: {
+    pages () {
+      const pages = []
+      this.tyItem.forEach((item, index) => {
+        const page = Math.floor(index / 6)
+        if (!pages[page]) {
+          pages[page] = []
+        }
+        pages[page].push(item)
+      })
+      return pages
+    }
   }
 }
 </script>
@@ -72,7 +93,25 @@ export default {
 <style>
   .hjyyj{
     padding: 0;
-    margin: 0;
+    margin: 0 .2rem;
+  }
+  .hjyyj .swiper-container{
+    width: 100%;
+    padding: 0;
+    height: 0;
+    padding-bottom: 130%;
+  }
+  .hjyyj .swiper-slide{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  .hjyyj .swiper-pagination-bullet{
+    width: .4rem;
+    height: .05rem;
+    border-radius: .025rem;
+    background: #f8166a;
   }
   .mainTitle{
     line-height: .8rem;
@@ -88,19 +127,28 @@ export default {
   .mainTitle-right .iconfont{
     font-size: .1rem;
   }
+  .ychbtm{
+    display: flex;
+    justify-content: center;
+    height: 0;
+    padding-bottom: 130%;
+    /*align-items: center;*/
+  }
   .ychTop img{
     width: 100%;
     margin-bottom: 0.15rem;
   }
   .ychRow{
     height: 0;
-    padding-bottom: 120%;
+    width: 100%;
+    padding-bottom: 140%;
     overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
   .ychItem{
     color: black;
-    padding-left: .2rem;
-    padding-right: .2rem;
     padding-bottom: 60%;
     box-sizing: border-box;
     width: 32%;

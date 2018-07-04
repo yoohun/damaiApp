@@ -64,14 +64,14 @@ export default {
   }
   .hwxcDiv-item{
     display: inline-block;
-    flex: 1;
-    margin-right: .1rem;
+    width: 48.5%;
   }
   .hwxcDiv-item:nth-child(2){
     margin-right: 0;
   }
   .hwxcDiv{
     display: flex;
+    justify-content: space-between;
   }
   .hwxcDiv img{
     width: 100%;

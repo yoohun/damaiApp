@@ -28,49 +28,10 @@
           </div>
         </div>
         <div class="cityName">
-          <div class="area" v-for="(cities, key) of allcity" :key="key">
+          <div class="area" v-for="(cities, key) of allcity" :key="key" :ref="key">
             <div class="cityAlphe">{{key}}</div>
             <div class="cityAlpheList">
               <div class="cityAlpheItem" v-for="innerItem of cities" :key="innerItem.id">{{innerItem.name}}</div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="cityAlphe">B</div>
-            <div class="cityAlpheList">
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="cityAlphe">C</div>
-            <div class="cityAlpheList">
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-            </div>
-          </div>
-          <div class="area">
-            <div class="cityAlphe">D</div>
-            <div class="cityAlpheList">
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
-              <div class="cityAlpheItem">安庆</div>
-              <div class="cityAlpheItem">阿拉尔</div>
             </div>
           </div>
         </div>
@@ -86,10 +47,19 @@ export default {
   props: {
     city: String,
     hotcity: Array,
-    allcity: Object
+    allcity: Object,
+    letter: String
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.wrapper)
+  },
+  watch: {
+    letter () {
+      if (this.letter) {
+        const element = this.$refs[this.letter][0]
+        this.scroll.scrollToElement(element)
+      }
+    }
   }
 }
 </script>

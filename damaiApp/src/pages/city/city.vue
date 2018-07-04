@@ -1,8 +1,8 @@
 <template>
   <div class="cityAll">
     <cityheader></cityheader>
-    <ddcity :city="city" :hotcity="hotcity" :allcity="allcity"></ddcity>
-    <alphebet :allcity="allcity"></alphebet>
+    <ddcity :city="city" :hotcity="hotcity" :allcity="allcity" :letter="letter"></ddcity>
+    <alphebet :allcity="allcity" @change="changeLetter"></alphebet>
   </div>
 </template>
 
@@ -17,7 +17,8 @@ export default {
     return {
       city: '',
       hotcity: [],
-      allcity: {}
+      allcity: {},
+      letter: ''
     }
   },
   components: {
@@ -31,7 +32,6 @@ export default {
         .then(this.getInfor)
     },
     getInfor (res) {
-      console.log(res)
       const ress = res.data
       if (ress.ret && ress.data) {
         const res = ress.data
@@ -39,7 +39,9 @@ export default {
         this.city = res.city
         this.allcity = res.cities
       }
-      console.log(ress)
+    },
+    changeLetter (letter) {
+      this.letter = letter
     }
   },
   mounted () {

@@ -158,6 +158,7 @@ export default {
   .cnxhRow{
     height: auto;
     overflow: hidden;
+    display: flex;
     justify-content:space-between;
     flex-wrap: wrap;
     margin-top: 0.2rem;
@@ -165,7 +166,6 @@ export default {
   .cnxhItem{
     background: #ffffff;
     color: black;
-    flex:1;
     width: 49%;
     padding-bottom: 110%;
     float: left;
