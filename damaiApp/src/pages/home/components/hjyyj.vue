@@ -12,11 +12,11 @@
         <swiper :options="swiperOption">
           <swiper-slide v-for="(papage, index) of pages" :key="index">
             <div class="ychItem" v-for="item of papage" :key="item.id">
-              <img :src="item.imgUrl" alt="">
+              <img :src="item.img" alt="">
               <div class="hwxcDivName">
                 <div class="hwxcDivNameAll">
-                  <div class="hwxcDivNameTop">{{item.tyTitle}}</div>
-                  <div class="hwxcDivNameBottom">{{item.tyDesc}}</div>
+                  <div class="hwxcDivNameTop">{{item.title}}</div>
+                  <div class="hwxcDivNameBottom hjyyjTime">{{item.time}}</div>
                 </div>
               </div>
             </div>
@@ -31,53 +31,20 @@
 <script>
 export default {
   name: 'hjyyj',
+  props: {
+    hjyyjItem: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      tyItem: [{
-        id: '001',
-        imgUrl: '../../../../static/imgs/10.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '002',
-        imgUrl: '../../../../static/imgs/9.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '003',
-        imgUrl: '../../../../static/imgs/8.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '004',
-        imgUrl: '../../../../static/imgs/9.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '005',
-        imgUrl: '../../../../static/imgs/10.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '006',
-        imgUrl: '../../../../static/imgs/8.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }, {
-        id: '007',
-        imgUrl: '../../../../static/imgs/10.png',
-        tyTitle: '2018华晨宇“火星”鸟巢演唱会',
-        tyDesc: '2018.09.08 19:00'
-      }]
+      }
     }
   },
   computed: {
     pages () {
       const pages = []
-      this.tyItem.forEach((item, index) => {
+      this.hjyyjItem.forEach((item, index) => {
         const page = Math.floor(index / 6)
         if (!pages[page]) {
           pages[page] = []
@@ -168,6 +135,19 @@ export default {
     color: #7b7b7b;
     overflow: hidden;
     text-overflow:ellipsis;
+    white-space: nowrap;
+  }
+  .hwxcDivNameAll .hjyyjTime{
+    font-size: .1rem;
+    color: #7b7b7b;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .hwxcDivNameAll .hwxcDivNameTop{
+    font-size: .22rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
     white-space: nowrap;
   }
 </style>

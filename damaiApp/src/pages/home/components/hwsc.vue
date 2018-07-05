@@ -24,22 +24,8 @@
 <script>
 export default {
   name: 'hwsc',
-  data () {
-    return {
-      hwscList: [{
-        id: '001',
-        imgUrl: '../../../../static/imgs/12.png',
-        userImg: '../../../../static/imgs/14.png',
-        userTitle: '香港 | 婕西',
-        userDesc: '歌王 Jessie J'
-      }, {
-        id: '002',
-        imgUrl: '../../../../static/imgs/13.png',
-        userImg: '../../../../static/imgs/15.png',
-        userTitle: '东方神起',
-        userDesc: '香港！ 终于等到你'
-      }]
-    }
+  props: {
+    hwscList: Array
   }
 }
 </script>

@@ -18,7 +18,9 @@ export default {
   },
   data () {
     return {
-      letterStatus: false
+      letterStatus: false,
+      startY: '',
+      timer: null
     }
   },
   computed: {
@@ -30,22 +32,29 @@ export default {
       return letters
     }
   },
+  updated () {
+    this.startY = this.$refs['A'][0].offsetTop
+  },
   methods: {
     getLetter (e) {
       this.$emit('change', e.target.innerHTML)
-      console.log(e.target.innerHTML)
     },
     letterStart () {
       this.letterStatus = true
     },
     letterMove (e) {
-      if (this.letterStatus) {
-        const startY = this.$refs['A'][0].offsetTop
-        const moveY = e.touches[0].clientY - 40
-        const index = Math.floor((moveY - startY) / 15)
-        if (index >= 0 && index < this.letters.length) {
-          this.$emit('change', this.letters[index])
-        }
+      if (this.timer) {
+        clearTimeout(this.timer)
+      } else {
+        setTimeout(() => {
+          if (this.letterStatus) {
+            const moveY = e.touches[0].clientY - 40
+            const index = Math.floor((moveY - this.startY) / 15)
+            if (index >= 0 && index < this.letters.length) {
+              this.$emit('change', this.letters[index])
+            }
+          }
+        }, 16)
       }
     },
     letterEnd () {
@@ -62,7 +71,7 @@ export default {
     justify-content: center;
     position: fixed;
     right: 0;
-    top:.78rem;
+    top:.4rem;
     bottom: 0;
     width: .4rem;
     text-align: center;

@@ -10,7 +10,7 @@
           <img :src="item.cnxhImg" alt="">
           <div class="cnxhText">
             <div class="cnxhDes">
-              <span class="cnxhTextTitle">{{item.cnxhPlace}}</span>
+              <span class="cnxhTextTitle">{{item.cnxhTitle}}</span>
               <span class="cnxhFg cnxhFj">{{item.cnxhFj}}</span>
               <span class="cnxhFg">{{item.cnxhTime}}</span>
             </div>
@@ -27,94 +27,8 @@
 <script>
 export default {
   name: 'cnxh',
-  data () {
-    return {
-      cnxhItem: [{
-        id: '001',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '002',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '003',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '004',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '005',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '006',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '007',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '008',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '009',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '010',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '011',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }, {
-        id: '012',
-        cnxhImg: '../../../../static/imgs/26.png',
-        cnxhPlace: '三里屯德云社剧场',
-        cnxhFj: '附近',
-        cnxhTime: '即将启程',
-        cnxhDesc: '德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。'
-      }]
-    }
+  props: {
+    cnxhItem: Array
   }
 }
 </script>
@@ -186,8 +100,12 @@ export default {
   }
   .cnxhTextTitle{
     line-height: .7rem;
-    font-size: .28rem;
+    font-size: .25rem;
     display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
   }
   .cnxhFg{
     width: auto;

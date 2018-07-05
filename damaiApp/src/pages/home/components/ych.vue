@@ -36,118 +36,15 @@
 <script>
 export default {
   name: 'ych',
+  props: {
+    ychSImg: Array,
+    ychItem: Array
+  },
   data () {
     return {
       swiperOption: {
         pagination: '.swiper-pagination'
-      },
-      ychItem: [{
-        id: '01',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '02',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '03',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '04',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '05',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '06',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '07',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '08',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '09',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '10',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '11',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '12',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '13',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '14',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '15',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '16',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '17',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }, {
-        id: '18',
-        title: '2018华晨宇“火星”鸟巢演唱会',
-        time: '2018.09.08 19:00',
-        img: '../../../../static/imgs/10.png'
-      }],
-      ychSImg: [{
-        id: '001',
-        imgUrl: '../../../../static/imgs/16.png',
-        imgTitle: '孟京辉戏剧馆',
-        imgDesc: '萌新老鸟必看'
-      }, {
-        id: '002',
-        imgUrl: '../../../../static/imgs/16.png',
-        imgTitle: '七幕人生',
-        imgDesc: '百老汇音乐剧'
-      }, {
-        id: '003',
-        imgUrl: '../../../../static/imgs/16.png',
-        imgTitle: '羽泉粉丝征集令',
-        imgDesc: '免费去现场'
-      }]
+      }
     }
   },
   computed: {

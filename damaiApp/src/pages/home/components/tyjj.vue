@@ -23,30 +23,8 @@
 <script>
 export default {
   name: 'tyjj',
-  data () {
-    return {
-      tyItem: [{
-        id: '001',
-        imgUrl: '../../../../static/imgs/19.png',
-        tyTitle: '爱上水索道划水',
-        tyDesc: '夏日新玩法，水上大作战'
-      }, {
-        id: '002',
-        imgUrl: '../../../../static/imgs/20.png',
-        tyTitle: '河北10K唐山站',
-        tyDesc: '这场赛，值得你奋力一搏'
-      }, {
-        id: '003',
-        imgUrl: '../../../../static/imgs/21.png',
-        tyTitle: '小马快跑亲子嘉年华',
-        tyDesc: '让孩子们在自然中狂欢'
-      }, {
-        id: '004',
-        imgUrl: '../../../../static/imgs/22.png',
-        tyTitle: '河北10K张家口站',
-        tyDesc: '跑张家口，冬奥助力'
-      }]
-    }
+  props: {
+    tyItem: Array
   }
 }
 </script>

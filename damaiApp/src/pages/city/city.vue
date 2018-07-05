@@ -1,6 +1,6 @@
 <template>
   <div class="cityAll">
-    <cityheader></cityheader>
+    <cityheader :allcity="allcity"></cityheader>
     <ddcity :city="city" :hotcity="hotcity" :allcity="allcity" :letter="letter"></ddcity>
     <alphebet :allcity="allcity" @change="changeLetter"></alphebet>
   </div>

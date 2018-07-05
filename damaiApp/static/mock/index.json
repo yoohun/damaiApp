@@ -7,13 +7,10 @@
       "imgUrl": "../../../../static/imgs/1.png"
     }, {
       "id": "002",
-      "imgUrl": "../../../../static/imgs/1.png"
+      "imgUrl": "../../../../static/imgs/54.png"
     }, {
       "id": "003",
-      "imgUrl": "../../../../static/imgs/1.png"
-    }, {
-      "id": "004",
-      "imgUrl": "../../../../static/imgs/1.png"
+      "imgUrl": "../../../../static/imgs/55.png"
     }],
     "iconList": [{
       "id": "0001",
@@ -71,62 +68,263 @@
       "imgTitle": "阿凡达",
       "imgDesc": "首次翱翔"
     }],
-    "recommendList": [{
+    "tyItem": [{
         "id": "0001",
-        "imgUrl": "http://img1.qunarzz.com/sight/p0/1409/19/adca619faaab0898245dc4ec482b5722.jpg_140x140_80f63803.jpg",
-        "title": "故宫",
-        "desc": "东方宫殿建筑代表，世界宫殿建筑典范",
-        "price": "200"
+        "imgUrl": "../../../../static/imgs/20.png",
+        "tyTitle": "河北10K唐山站",
+        "tyDesc": "这场赛，值得你奋力一搏"
       }, {
         "id": "0002",
-        "imgUrl": "http://img1.qunarzz.com/sight/p0/1511/d2/d2aec2dfc5aa771290.water.jpg_140x140_abb362a7.jpg",
-        "title": "南山滑雪场",
-        "desc": "北京专业级滑雪圣地",
-        "price": "150"
+        "imgUrl": "../../../../static/imgs/19.png",
+        "tyTitle": "爱上水索道划水",
+        "tyDesc": "夏日新玩法，水上大作战"
       }, {
-        "id": "0003",
-        "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/f4/f467729126949c3a.water.jpg_140x140_ef235b1c.jpg",
-        "title": "天安门广场",
-        "desc": "我爱北京天安门，天安门上太阳升",
-        "price": "100"
-      }, {
-        "id": "0004",
-        "imgUrl": "http://img1.qunarzz.com/sight/p0/1501/40/40b2b6c951b28fdd.water.jpg_140x140_1c863e5c.jpg",
-        "title": "水立方",
-        "desc": "中国的荣耀，阳光下的晶莹水滴",
-        "price": "200"
-      }, {
-        "id": "0005",
-        "imgUrl": "http://img1.qunarzz.com/sight/p0/201308/23/b283071686e64dfec8d65eac.jpg_140x140_8c5a7c49.jpg",
-        "title": "温都水城养生馆",
-        "desc": "各种亚热带植物掩映其间仿佛置身热带雨林",
-        "price": "250"
-      }],
-    "weekendList": [{
+      "id": "0003",
+      "imgUrl": "../../../../static/imgs/21.png",
+      "tyTitle": "小马快跑亲子嘉年华",
+      "tyDesc": "让孩子们在自然中狂欢"
+    }, {
+      "id": "0004",
+      "imgUrl": "../../../../static/imgs/22.png",
+      "tyTitle": "河北10K张家口站",
+      "tyDesc": "跑张家口，冬奥助力"
+    }],
+    "cnxhItem": [{
         "id": "0001",
-        "imgUrl": "http://img1.qunarzz.com/sight/source/1510/6e/1ea71e2f04e.jpg_r_640x214_aa6f091d.jpg",
-        "title": "北京温泉排行榜",
-        "desc": "细数北京温泉，温暖你的冬天"
+        "cnxhImg": "../../../../static/imgs/26.png",
+        "cnxhTime": "即将启程",
+        "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
+        "cnxhFj": "附近",
+        "cnxhTitle": "三里屯德云社剧场"
       }, {
-        "id": "0002",
-        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/aa/7baaf8a851d221.jpg_r_640x214_1431200f.jpg",
-        "title": "北京必游TOP10",
-        "desc": "来北京必去的景点非这些地方莫属"
-      }, {
-        "id": "0003",
-        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/9e/21df651e19af5d.jpg_r_640x214_3ea5bb38.jpg",
-        "title": "寻找北京的皇城范儿",
-        "desc": "数百年的宫廷庙宇，至今依旧威严霸气"
-      }, {
-        "id": "0004",
-        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/ce/bc89bc2f0e33ea.jpg_r_640x214_3e408453.jpg",
-        "title": "学生最爱的博物馆",
-        "desc": "周末干嘛？北京很多博物馆已经免费开放啦"
-      }, {
-        "id": "0005",
-        "imgUrl": "http://img1.qunarzz.com/sight/source/1505/b2/fde1bfcd057a52.jpg_r_640x214_bbf3fa44.jpg",
-        "title": "儿童剧场，孩子的乐园",
-        "desc": "带宝贝观看演出，近距离体验艺术的无穷魅力"
+      "id": "0002",
+      "cnxhImg": "../../../../static/imgs/31.png",
+      "cnxhTime": "相声专场",
+      "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "德云红酒之夜"
+    }, {
+      "id": "0003",
+      "cnxhImg": "../../../../static/imgs/33.png",
+      "cnxhTime": "享受街舞",
+      "cnxhDesc": "欢迎你加入嘉禾舞社的舞蹈课堂，享受街舞带来的乐趣！",
+      "cnxhFj": "附近",
+      "cnxhTitle": "嘉禾舞社街舞"
+    }, {
+      "id": "0004",
+      "cnxhImg": "../../../../static/imgs/29.png",
+      "cnxhTime": "甜蜜升级",
+      "cnxhDesc": "诚意打造专属于乐迷的绝美歌单，给你超乎想象的live互动式生日会",
+      "cnxhFj": "附近",
+      "cnxhTitle": "张弛（校长）带你去旅行生日会"
+    }, {
+      "id": "0005",
+      "cnxhImg": "../../../../static/imgs/28.png",
+      "cnxhTime": "魅力四射",
+      "cnxhDesc": "今生必看的经典音乐剧之一",
+      "cnxhFj": "附近",
+      "cnxhTitle": "猫"
+    }, {
+      "id": "0006",
+      "cnxhImg": "../../../../static/imgs/27.png",
+      "cnxhTime": "爆笑经典",
+      "cnxhDesc": "“半分钟一次掌声，一分钟一个笑点。”",
+      "cnxhFj": "附近",
+      "cnxhTitle": "乌龙山伯爵"
+    }, {
+      "id": "0007",
+      "cnxhImg": "../../../../static/imgs/35.png",
+      "cnxhTime": "结构喜剧",
+      "cnxhDesc": "一系列行动上的误会、错位，进而构成了一连串的喜剧冲突，让你半分钟一次掌声，一分钟一个笑点。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "春宵保卫战"
+    }, {
+      "id": "0008",
+      "cnxhImg": "../../../../static/imgs/34.png",
+      "cnxhTime": "喜怒哀乐",
+      "cnxhDesc": "品味上个世纪末大杂院里的喜怒哀乐，体会北京人与外地人之间的冲突温情。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "北京邻居"
+    }, {
+      "id": "0009",
+      "cnxhImg": "../../../../static/imgs/33.png",
+      "cnxhTime": "享受街舞",
+      "cnxhDesc": "欢迎你加入嘉禾舞社的舞蹈课堂，享受街舞带来的乐趣！",
+      "cnxhFj": "附近",
+      "cnxhTitle": "嘉禾舞社街舞"
+    }, {
+      "id": "0010",
+      "cnxhImg": "../../../../static/imgs/32.png",
+      "cnxhTime": "通话故事",
+      "cnxhDesc": "这是一个家喻户晓的童话故事受到众多编舞师的青睐，特别适合以舞台剧的形式呈现。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "灰姑娘"
+    }, {
+      "id": "0011",
+      "cnxhImg": "../../../../static/imgs/31.png",
+      "cnxhTime": "相声专场",
+      "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "郭德纲德云社"
+    }, {
+      "id": "0012",
+      "cnxhImg": "../../../../static/imgs/30.png",
+      "cnxhTime": "不朽名作",
+      "cnxhDesc": "一场关于爱与自由、欲望与激情的终极拷问。",
+      "cnxhFj": "附近",
+      "cnxhTitle": "卡门"
+    }],
+    "ychSImg": [{
+      "id": "001",
+      "imgUrl": "../../../../static/imgs/16.png",
+      "imgTitle": "孟京辉戏剧馆",
+      "imgDesc": "萌新老鸟必看"
+    }, {
+      "id": "002",
+      "imgUrl": "../../../../static/imgs/52.png",
+      "imgTitle": "七幕人生",
+      "imgDesc": "百老汇音乐剧"
+    }, {
+      "id": "003",
+      "imgUrl": "../../../../static/imgs/53.png",
+      "imgTitle": "羽泉粉丝征集令",
+      "imgDesc": "免费去现场"
+    }],
+    "hjyyjItem":[{
+      "id": "001",
+      "img": "../../../../static/imgs/42.png",
+      "title": "林奕华年度大戏《非常林奕华》",
+      "time": "2018.17.07-12.08"
+    }, {
+      "id": "002",
+      "img": "../../../../static/imgs/41.png",
+      "title": "爱情轻喜剧《恋爱有8》",
+      "time": "2018.08.08-08.11"
+    }, {
+      "id": "003",
+      "img": "../../../../static/imgs/40.png",
+      "title": "经典小剧场话剧《有多少爱可以胡来》",
+      "time": "2018.07.03-07.07"
+    }, {
+      "id": "004",
+      "img": "../../../../static/imgs/43.png",
+      "title": "外百老汇浪漫爱情《长腿叔叔》",
+      "time": "2018.08.29-08.30"
+    }, {
+      "id": "005",
+      "img": "../../../../static/imgs/44.png",
+      "title": "2018英国原版引进《小猪佩奇》",
+      "time": "2018.09.15-09.16"
+    }, {
+      "id": "006",
+      "img": "../../../../static/imgs/45.png",
+      "title": "【七幕&保利出品《灰姑娘》】",
+      "time": "2018.07.12-07.22"
+    }, {
+      "id": "007",
+      "img": "../../../../static/imgs/42.png",
+      "title": "林奕华年度大戏《非常林奕华》",
+      "time": "2018.17.07-12.08"
+    }, {
+      "id": "008",
+      "img": "../../../../static/imgs/41.png",
+      "title": "爱情轻喜剧《恋爱有8》",
+      "time": "2018.08.08-08.11"
+    }, {
+      "id": "009",
+      "img": "../../../../static/imgs/40.png",
+      "title": "经典小剧场话剧《有多少爱可以胡来》",
+      "time": "2018.07.03-07.07"
+    }, {
+      "id": "010",
+      "img": "../../../../static/imgs/43.png",
+      "title": "外百老汇浪漫爱情《长腿叔叔》",
+      "time": "2018.08.29-08.30"
+    }, {
+      "id": "011",
+      "img": "../../../../static/imgs/44.png",
+      "title": "2018英国原版引进《小猪佩奇》",
+      "time": "2018.09.15-09.16"
+    }, {
+      "id": "012",
+      "img": "../../../../static/imgs/45.png",
+      "title": "【七幕&保利出品《灰姑娘》】",
+      "time": "2018.07.12-07.22"
+    }],
+    "ychItem":[{
+      "id": "001",
+      "img": "../../../../static/imgs/46.png",
+      "title": "YOONA FANMETTING",
+      "time": "2018.08.04 19:30"
+    }, {
+      "id": "002",
+      "img": "../../../../static/imgs/47.png",
+      "title": "陈慧娴Priscilla-ism",
+      "time": "2018.10.27 19:30"
+    }, {
+      "id": "003",
+      "img": "../../../../static/imgs/48.png",
+      "title": "刘瑞琦“温暖的房间”",
+      "time": "2018.09.15 20:00"
+    }, {
+      "id": "004",
+      "img": "../../../../static/imgs/51.png",
+      "title": "RADWIMPS Aisa Live Tour 2018",
+      "time": "2018.08.15 20:00"
+    }, {
+      "id": "005",
+      "img": "../../../../static/imgs/50.png",
+      "title": "MIKE SHINODA TOUR",
+      "time": "2018.08.07 20:00"
+    }, {
+      "id": "006",
+      "img": "../../../../static/imgs/49.png",
+      "title": "2018 PARK YUCINKY",
+      "time": "2018.07.07 14:00"
+    }, {
+      "id": "007",
+      "img": "../../../../static/imgs/46.png",
+      "title": "YOONA FANMETTING",
+      "time": "2018.08.04 19:30"
+    }, {
+      "id": "008",
+      "img": "../../../../static/imgs/47.png",
+      "title": "陈慧娴Priscilla-ism",
+      "time": "2018.10.27 19:30"
+    }, {
+      "id": "009",
+      "img": "../../../../static/imgs/48.png",
+      "title": "刘瑞琦“温暖的房间”",
+      "time": "2018.09.15 20:00"
+    }, {
+      "id": "010",
+      "img": "../../../../static/imgs/51.png",
+      "title": "RADWIMPS Aisa Live Tour 2018",
+      "time": "2018.08.15 20:00"
+    }, {
+      "id": "011",
+      "img": "../../../../static/imgs/50.png",
+      "title": "MIKE SHINODA TOUR",
+      "time": "2018.08.07 20:00"
+    }, {
+      "id": "012",
+      "img": "../../../../static/imgs/49.png",
+      "title": "2018 PARK YUCINKY",
+      "time": "2018.07.07 14:00"
+    }],
+    "hwscList" :[{
+      "id": "01",
+      "imgUrl": "../../../../static/imgs/12.png",
+      "userImg": "../../../../static/imgs/14.png",
+      "userTitle": "香港 | 婕西",
+      "userDesc": "歌王 Jessie J"
+    },
+      {
+        "id": "02",
+        "imgUrl": "../../../../static/imgs/13.png",
+        "userImg": "../../../../static/imgs/15.png",
+        "userTitle": "东方神起",
+        "userDesc": "香港！ 终于等到你"
       }]
   }
 }
