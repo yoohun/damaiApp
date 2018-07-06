@@ -12,7 +12,7 @@
     </div>
     <div class="cityUl" ref="search" v-show="searchword">
       <ul>
-        <li v-for="item of list" :key="item.id" class="border-bottom searchLi" @click="clickCity">{{item.name}}</li>
+        <li v-for="item of list" :key="item.id" class="border-bottom searchLi" @click="cityclick(item.name)">{{item.name}}</li>
         <li class="border-bottom searchLi" v-show="hasnodata">找不到对应的城市</li>
       </ul>
     </div>
@@ -36,6 +36,12 @@ export default {
   computed: {
     hasnodata () {
       return !this.list.length
+    }
+  },
+  methods: {
+    cityclick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
     }
   },
   watch: {
@@ -62,11 +68,6 @@ export default {
   },
   mounted () {
     this.scroll = new Bscroll(this.$refs.search)
-  },
-  methods: {
-    clickCity (e) {
-      console.log('111')
-    }
   }
 }
 </script>

@@ -1,7 +1,6 @@
 {
 	"ret": true,
 	"data":{
-    "city": "赣州",
 		"hotCities": [{
 			"id": 1,
 			"spell": "beijing",

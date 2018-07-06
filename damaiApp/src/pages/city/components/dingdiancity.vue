@@ -4,7 +4,7 @@
       <div class="poCity">
         <div class="dwDiv">当前定位城市</div>
         <div class="dqCity">
-          <span class="localCity">{{this.city}}</span>
+          <span class="localCity">{{this.$store.state.city}}</span>
           <div class="cxdw">
             <span class="iconfont">&#xe645;</span>
             重新定位
@@ -16,8 +16,10 @@
           热门城市
         </div>
         <div class="cityList">
-          <div class="cityItem" v-for="city of hotcity" :key="city.id">
-            {{city.name}}
+          <div class="cityItem" @click="cityclick(city.name)" v-for="city of hotcity" :key="city.id">
+            <span>
+              {{city.name}}
+            </span>
           </div>
         </div>
       </div>
@@ -31,7 +33,7 @@
           <div class="area" v-for="(cities, key) of allcity" :key="key" :ref="key">
             <div class="cityAlphe">{{key}}</div>
             <div class="cityAlpheList">
-              <div class="cityAlpheItem" v-for="innerItem of cities" :key="innerItem.id">{{innerItem.name}}</div>
+              <div class="cityAlpheItem" v-for="innerItem of cities" :key="innerItem.id" @click="cityclick(innerItem.name)">{{innerItem.name}}</div>
             </div>
           </div>
         </div>
@@ -45,13 +47,15 @@ import Bscroll from 'better-scroll'
 export default {
   name: 'ddcity',
   props: {
-    city: String,
     hotcity: Array,
     allcity: Object,
     letter: String
   },
-  mounted () {
-    this.scroll = new Bscroll(this.$refs.wrapper)
+  methods: {
+    cityclick (city) {
+      this.$store.commit('changeCity', city)
+      this.$router.push('/')
+    }
   },
   watch: {
     letter () {
@@ -60,6 +64,9 @@ export default {
         this.scroll.scrollToElement(element)
       }
     }
+  },
+  mounted () {
+    this.scroll = new Bscroll(this.$refs.wrapper)
   }
 }
 </script>

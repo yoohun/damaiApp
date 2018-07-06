@@ -3,7 +3,7 @@
     <router-link to='/city'>
       <div class="top-pos">
       <span class="iconfont">&#xe645;</span>
-      {{this.city}}
+      {{this.$store.state.city}}
     </div>
     </router-link>
     <div class="top-mid">

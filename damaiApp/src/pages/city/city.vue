@@ -1,7 +1,7 @@
 <template>
   <div class="cityAll">
     <cityheader :allcity="allcity"></cityheader>
-    <ddcity :city="city" :hotcity="hotcity" :allcity="allcity" :letter="letter"></ddcity>
+    <ddcity :hotcity="hotcity" :allcity="allcity" :letter="letter"></ddcity>
     <alphebet :allcity="allcity" @change="changeLetter"></alphebet>
   </div>
 </template>
@@ -15,7 +15,6 @@ export default {
   name: 'city',
   data () {
     return {
-      city: '',
       hotcity: [],
       allcity: {},
       letter: ''
@@ -36,7 +35,6 @@ export default {
       if (ress.ret && ress.data) {
         const res = ress.data
         this.hotcity = res.hotCities
-        this.city = res.city
         this.allcity = res.cities
       }
     },
