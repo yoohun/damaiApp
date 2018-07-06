@@ -1,7 +1,6 @@
 {
   "ret": true,
   "data": {
-    "city": "赣州",
     "swiperList": [{
       "id": "001",
       "imgUrl": "../../../../static/imgs/1.png"

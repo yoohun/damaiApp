@@ -1,6 +1,6 @@
 <template>
   <div>
-    <homeheader :city="city"></homeheader>
+    <homeheader></homeheader>
     <homeswiper :swiperList="swiperList"></homeswiper>
     <homeicon :iconList="iconList"></homeicon>
     <tuijian :tjTopList="tjTopList" :tjBottomList="tjBottomList"></tuijian>
@@ -25,11 +25,12 @@ import tyjj from './components/tyjj'
 import cnxh from './components/cnxh'
 import homenav from './components/homenav'
 import axios from 'axios'
+import { mapState } from 'vuex'
 export default {
   name: 'home',
   data () {
     return {
-      city: '',
+      lastCity: '',
       swiperList: [],
       iconList: [],
       tjTopList: [],
@@ -56,13 +57,12 @@ export default {
   },
   methods: {
     getIndexInfor () {
-      axios.get('/api/index.json')
+      axios.get('/api/index.json?city=' + this.city)
         .then(this.showInfor)
     },
     showInfor (res) {
       res = res.data
       if (res.ret && res.data) {
-        this.city = res.data.city
         this.swiperList = res.data.swiperList
         this.iconList = res.data.iconList
         this.tjTopList = res.data.tjTopList
@@ -76,8 +76,19 @@ export default {
       }
     }
   },
+  computed: {
+    ...mapState(['city'])
+  },
   mounted () {
+    this.lastCity = this.city
     this.getIndexInfor()
+    console.log(this.city)
+  },
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getIndexInfor()
+    }
   }
 }
 </script>
