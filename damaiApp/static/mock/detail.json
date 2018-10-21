@@ -1,25 +1,169 @@
 {
   "ret": true,
   "data": {
-    "sightName": "大连圣亚海洋世界(AAAA景区)",
-    "bannerImg": "http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_600x330_bf9c4904.jpg",
-    "gallaryImgs": ["http://img1.qunarzz.com/sight/p0/201404/23/04b92c99462687fa1ba45c1b5ba4ad77.jpg_800x800_70debc93.jpg", "http://img1.qunarzz.com/sight/p0/1709/76/7691528bc7d7ad3ca3.img.png_800x800_9ef05ee7.png"],
-    "categoryList": [{
-        "title": "成人票",
-        "children": [{
-          "title": "成人三馆联票",
-          "children": [{
-            "title": "成人三馆联票 - 某一连锁店销售"
-          }]
-        },{
-          "title": "成人五馆联票"
-        }]
-      }, {
-        "title": "学生票"
-      }, {
-        "title": "儿童票"
-      }, {
-        "title": "特惠票"
-      }]
+    "演唱会": [{
+      "id": "001",
+      "imgUrl": "../../../../static/imgs/57.png",
+      "iconitemtitle": "1演唱会“未`LIVE”巡回演唱会-深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych01"
+    }, {
+      "id": "002",
+      "imgUrl": "../../../../static/imgs/58.png",
+      "iconitemtitle": "2演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych02"
+    }, {
+      "id": "003",
+      "imgUrl": "../../../../static/imgs/59.png",
+      "iconitemtitle": "3演唱会.凯莉2018世界巡演深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.10.22 20:00",
+      "iconitemplace": "华润深圳湾体育中心 ",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych03"
+    }, {
+      "id": "004",
+      "imgUrl": "../../../../static/imgs/60.png",
+      "iconitemtitle": "4演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych04"
+    }, {
+      "id": "005",
+      "imgUrl": "../../../../static/imgs/61.png",
+      "iconitemtitle": "5演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych05"
+    }, {
+      "id":"006",
+      "imgUrl": "../../../../static/imgs/62.png",
+      "iconitemtitle": "6演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince":"深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych06"
+    }, {
+      "id": "007",
+      "imgUrl": "../../../../static/imgs/63.png",
+      "iconitemtitle": "7演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych07"
+    }, {
+      "id": "008",
+      "imgUrl": "../../../../static/imgs/64.png",
+      "iconitemtitle": "8演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid":"ych08"
+    }, {
+      "id": "009",
+      "imgUrl": "../../../../static/imgs/65.png",
+      "iconitemtitle": "9演唱会“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych09"
+    }],
+    "话剧歌剧": [{
+      "id": "001",
+      "imgUrl": "../../../../static/imgs/57.png",
+      "iconitemtitle": "张杰2018“未`LIVE”巡回演唱会-深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych01"
+    }, {
+      "id": "002",
+      "imgUrl": "../../../../static/imgs/58.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych02"
+    }, {
+      "id": "003",
+      "imgUrl": "../../../../static/imgs/59.png",
+      "iconitemtitle": "话剧.凯莉2018世界巡演深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.10.22 20:00",
+      "iconitemplace": "华润深圳湾体育中心 ",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych03"
+    }, {
+      "id": "004",
+      "imgUrl": "../../../../static/imgs/60.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych04"
+    }, {
+      "id": "005",
+      "imgUrl": "../../../../static/imgs/61.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych05"
+    }, {
+      "id":"006",
+      "imgUrl": "../../../../static/imgs/62.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince":"深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych06"
+    }, {
+      "id": "007",
+      "imgUrl": "../../../../static/imgs/63.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych07"
+    }, {
+      "id": "008",
+      "imgUrl": "../../../../static/imgs/64.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid":"ych08"
+    }, {
+      "id": "009",
+      "imgUrl": "../../../../static/imgs/65.png",
+      "iconitemtitle": "话剧“未`LIVE”巡回演唱会 深圳站",
+      "iconitemprovince": "深圳 /",
+      "iconitemtime": "2018.09.26",
+      "iconitemplace": "深圳大运中心体育馆",
+      "iconitemprice": "¥280-1280",
+      "iconid": "ych09"
+    }]
   }
 }

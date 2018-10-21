@@ -17,7 +17,8 @@ export default {
     return {
       hotcity: [],
       allcity: {},
-      letter: ''
+      letter: '',
+      includedComponents: 'citycomponents'
     }
   },
   components: {
@@ -37,6 +38,7 @@ export default {
         this.hotcity = res.hotCities
         this.allcity = res.cities
       }
+      console.log(res)
     },
     changeLetter (letter) {
       this.letter = letter

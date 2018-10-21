@@ -3,7 +3,7 @@
     <router-link to='/city'>
       <div class="top-pos">
       <span class="iconfont">&#xe645;</span>
-      {{this.city}}
+      {{this.thiscity}}
     </div>
     </router-link>
     <div class="top-mid">
@@ -23,6 +23,14 @@ export default {
   name: 'homeheader',
   computed: {
     ...mapState(['city'])
+  },
+  data () {
+    return {
+      thiscity: ''
+    }
+  },
+  mounted () {
+    this.thiscity = localStorage.getItem('city')
   }
 }
 </script>
@@ -45,7 +53,7 @@ export default {
   .top-pos{
     min-width: 1rem;
     float: left;
-    font-size: 0.26rem;
+    font-size: 0.26rem;SS
     padding-right: 0.1rem;
     color: #000000;
   }

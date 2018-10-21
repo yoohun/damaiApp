@@ -5,7 +5,21 @@ try {
   }
 } catch (e) {
 }
-
+let defaultphone = ''
+try {
+  if (localStorage.loginphone) {
+    defaultCity = localStorage.loginphone
+  }
+} catch (e) {
+}
 export default {
-  city: defaultCity
+  city: defaultCity,
+  iconChoose: '',
+  iconclassNum: -1,
+  activeclass: false,
+  iconid: '',
+  iconitemtitle: '',
+  loginphone: defaultphone,
+  islogin: false,
+  homenavnum: 1
 }

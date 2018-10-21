@@ -1,26 +1,28 @@
 <template>
   <nav>
-    <span class="navIcon">
-      <span class="navClick" @click="shouye" :class="{activeS:sy}">
+    <span class="navIcon" @click="shouye" :class="{active:sy==this.$store.state.homenavnum}">
+      <span class="navClick">
         <span class="iconfont">&#xe635;</span>
         <span class="navText">首页</span>
       </span>
     </span>
-    <span class="navIcon" @click="faxian" :class="{active:fax}">
+    <span class="navIcon" @click="faxian" :class="{active:fax==this.$store.state.homenavnum}">
       <span class="navClick">
         <span class="iconfont">&#xe65b;</span>
         <span class="navText">发现</span>
       </span>
     </span>
-    <span class="navIcon" @click="huiyuan" :class="{active:hy}">
+    <span class="navIcon" @click="huiyuan" :class="{active:hy==this.$store.state.homenavnum}">
       <span class="navClick">
-        <span class="iconfont">&#xe648;</span>
-        <span class="navText">会员</span>
+        <span class="iconfont">&#xe602;</span>
+        <span class="navText">票夹</span>
       </span>
     </span>
-    <span class="navIcon" @click="wo" :class="{active:wd}">
+    <span class="navIcon" @click="wo" :class="{active:wd==this.$store.state.homenavnum}">
+      <span class="navClick">
         <span class="iconfont">&#xe634;</span>
         <span class="navText">我的</span>
+      </span>
     </span>
   </nav>
 </template>
@@ -30,36 +32,26 @@ export default {
   name: 'homenav',
   data () {
     return {
-      sy: false,
-      fax: false,
-      hy: false,
-      wd: false
+      sy: 1,
+      fax: 2,
+      hy: 3,
+      wd: 4
     }
   },
   methods: {
     shouye: function () {
-      this.sy = false
-      this.fax = false
-      this.hy = false
-      this.wd = false
+      this.$store.state.homenavnum = 1
+      this.$router.push('/')
     },
     faxian: function () {
-      this.sy = true
-      this.fax = true
-      this.hy = false
-      this.wd = false
+      this.$store.state.homenavnum = 2
     },
     huiyuan: function () {
-      this.sy = true
-      this.fax = false
-      this.hy = true
-      this.wd = false
+      this.$store.state.homenavnum = 3
     },
     wo: function () {
-      this.sy = true
-      this.fax = false
-      this.hy = false
-      this.wd = true
+      this.$store.state.homenavnum = 4
+      this.$router.push('/myself')
     }
   }
 }
@@ -81,9 +73,6 @@ export default {
   }
   .navIcon{
     color: #7b7b7b;
-  }
-  .navIcon:nth-child(1){
-    color: #f8166a;
   }
   nav .iconfont{
     padding: 0 .4rem;

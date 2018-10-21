@@ -4,7 +4,7 @@
       <div class="poCity">
         <div class="dwDiv">当前定位城市</div>
         <div class="dqCity">
-          <span class="localCity">{{this.$store.state.city}}</span>
+          <span class="localCity">{{this.thiscity}}</span>
           <div class="cxdw">
             <span class="iconfont">&#xe645;</span>
             重新定位
@@ -51,6 +51,11 @@ export default {
     allcity: Object,
     letter: String
   },
+  data () {
+    return {
+      thiscity: ''
+    }
+  },
   methods: {
     cityclick (city) {
       this.$store.commit('changeCity', city)
@@ -69,6 +74,8 @@ export default {
     this.scroll = new Bscroll(this.$refs.wrapper, {
       click: true
     })
+    this.thiscity = localStorage.getItem('city')
+    console.log(localStorage.getItem('city'))
   }
 }
 </script>
