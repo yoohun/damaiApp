@@ -7,7 +7,6 @@ import detail from '@/pages/detail/detail'
 import chooseweizi from '@/pages/detail/chooseweizi'
 import dingdan from '@/pages/detail/dingdan'
 import dingdanaddress from '@/pages/detail/dingdanaddress'
-import map from '@/pages/map/map'
 import myself from '@/pages/myself/myself'
 import setting from '@/pages/myself/setting'
 import aboutdamai from '@/pages/myself/about'
@@ -17,14 +16,19 @@ import changezh from '@/pages/myself/changezh'
 import mydingdan from '@/pages/myself/mydingdan'
 import setuserinfor from '@/pages/myself/setuserinfor'
 import help from '@/pages/myself/help'
+import eachmap from '@/pages/detail/eachmap'
 
 Vue.use(Router)
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
       name: 'home',
-      component: home
+      component: home,
+      meta: {
+        keepAlive: true
+      }
     }, {
       path: '/city',
       name: 'city',
@@ -34,16 +38,15 @@ export default new Router({
       name: 'icon',
       component: icon,
       meta: {
-        keepAlive: false // 不需要缓存
+        keepAlive: true
       }
     }, {
       path: '/detail',
       name: 'detail',
-      component: detail
-    }, {
-      path: '/map',
-      name: 'map',
-      component: map
+      component: detail,
+      meta: {
+        keepAlive: false
+      }
     }, {
       path: '/detail/chooseweizi',
       name: 'chooseweizi',
@@ -92,7 +95,20 @@ export default new Router({
       path: '/myself/help',
       name: 'help',
       component: help
+    }, {
+      path: '/detail/eachmap',
+      name: 'eachmap',
+      component: eachmap
     }
-
-  ]
+  ],
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      if (from.meta.keepAlive) {
+        from.meta.savedPosition = document.body.scrollTop
+      }
+      return { x: 0, y: to.meta.savedPosition || 0 }
+    }
+  }
 })

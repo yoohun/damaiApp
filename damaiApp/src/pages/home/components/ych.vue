@@ -2,16 +2,16 @@
   <div class="mainych">
     <div class="mainTitle">
       <span class="mainTitle-left">演唱会</span>
-      <span class="mainTitle-right">更多 <span class="iconfont">&#xe631;</span> </span>
-    </div>
-    <div class="ychTop">
-      <img src="../../../../static/imgs/7.png" alt="">
+      <span class="mainTitle-right" @click="tomore">更多 <span class="iconfont">&#xe631;</span> </span>
     </div>
     <div class="ychbtm">
       <swiper :options="swiperOption">
         <swiper-slide v-for="(page, index) of pages" :key="index">
-          <div class="ychbtmItem" v-for="itemList of page" :key="itemList.id">
-            <img :src="itemList.img" alt="">
+          <div class="ychbtmItem" v-for="itemList of page" :key="itemList.id" @click="toDetail(itemList.id, itemList.kind)">
+            <div class="ychimgtext">
+              <img :src="itemList.img" alt="">
+              <!--<span class="ychdowntext">asdasdasd</span>-->
+            </div>
             <div class="ychbtmText">
               <div class="ychbtmTextT">{{itemList.title}}</div>
               <div class="ychbtmTextTime">{{itemList.time}}</div>
@@ -22,7 +22,7 @@
       </swiper>
     </div>
     <div class="mainychBImg">
-      <div class="mainychImg" v-for="item of ychSImg" :key="item.id">
+      <div class="mainychImg" v-for="item of ychSImg" :key="item.id" @click="toDetail(item.id, item.kind)">
         <img :src="item.imgUrl" alt="">
         <div class="mainychImgText">
           <span class="mainychImgTextB">{{item.imgTitle}}</span>
@@ -59,6 +59,25 @@ export default {
       })
       return pages
     }
+  },
+  methods: {
+    toDetail (id, kind) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: id
+        }
+      })
+      this.$store.state.iconid = id
+      this.$store.state.iconkind = kind
+    },
+    tomore () {
+      this.$store.state.iconChoose = '演唱会'
+      this.$store.state.iconclassNum = 1
+      console.log(this.$store.state.iconChoose)
+      console.log(this.$store.state.iconclassNum)
+      this.$router.push('/icon')
+    }
   }
 }
 </script>
@@ -84,10 +103,6 @@ export default {
   .mainych{
     height: auto;
     padding: 0 0.2rem 0.5rem;
-  }
-  .ychTop img{
-    width: 100%;
-    margin-bottom: 0.15rem;
   }
   .ychImg img{
     height: 2.7rem;
@@ -133,16 +148,37 @@ export default {
     width: 100%;
   }
   .mainychImgText{
-    font-size: .1rem;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: .2rem;
     position: absolute;
     top:.4rem;
+    left: 0;
+    right: 0;
     color: #ffffff;
   }
   .mainychImgText span{
-    display: inline-block;
+    display: block;
+    text-align: center;
   }
   .mainychImgText .mainychImgTextB{
-    font-size: .26rem;
+    font-size: .28rem;
+    margin-bottom: .2rem;
+  }
+  .ychimgtext{
+    position: relative;
+  }
+  .ychdowntext{
+    font-size: .2rem;
+    padding: 0.02rem .08rem;
+    display: inline-block;
+    color: deeppink;
+    background: #ffffff;
+    border-radius: .05rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 20;
   }
 </style>

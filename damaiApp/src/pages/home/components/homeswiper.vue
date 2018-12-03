@@ -1,8 +1,8 @@
 <template>
   <div class="wrapper">
     <swiper :options="swiperOption">
-      <swiper-slide v-for="item of swiperList" :key="item.id">
-        <img :src="item.imgUrl" alt="" class="swiperImg">
+      <swiper-slide v-for="item of swiperList" :key="item.id" >
+        <img :src="item.imgUrl" :alt="item.kind" class="swiperImg" :title="item.id" :id="item.id">
       </swiper-slide>
       <div class="swiper-pagination"  slot="pagination"></div>
     </swiper>
@@ -20,7 +20,11 @@ export default {
       swiperOption: {
         pagination: '.swiper-pagination',
         loop: true,
-        autoplay: 3000
+        autoplay: 3000,
+        lazyLoading: true,
+        onClick (swiper, event) {
+          console.log(event.target.id)
+        }
       }
     }
   }

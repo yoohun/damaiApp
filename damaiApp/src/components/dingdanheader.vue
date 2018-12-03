@@ -37,5 +37,6 @@ export default {
   display: inline-block;
   text-align: center;
   flex: 1;
+  font-size: .32rem;
 }
 </style>

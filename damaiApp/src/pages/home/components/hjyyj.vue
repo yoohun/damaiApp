@@ -2,17 +2,14 @@
   <div class="hjyyj">
     <div class="mainTitle">
       <span class="mainTitle-left">话剧音乐剧</span>
-      <span class="mainTitle-right">更多 <span class="iconfont">&#xe631;</span> </span>
-    </div>
-    <div class="ychTop">
-      <img src="../../../../static/imgs/7.png" alt="">
+      <span class="mainTitle-right" @click="tomore">更多 <span class="iconfont">&#xe631;</span> </span>
     </div>
     <div class="ychbtm">
       <div class="ychRow">
         <swiper :options="swiperOption">
           <swiper-slide v-for="(papage, index) of pages" :key="index">
-            <div class="ychItem" v-for="item of papage" :key="item.id">
-              <img :src="item.img" alt="">
+            <div class="ychItem" v-for="item of papage" :key="item.id" @click="toDeatil(item.id, item.kind)">
+              <img :src="item.img">
               <div class="hwxcDivName">
                 <div class="hwxcDivNameAll">
                   <div class="hwxcDivNameTop">{{item.title}}</div>
@@ -37,7 +34,8 @@ export default {
   data () {
     return {
       swiperOption: {
-        pagination: '.swiper-pagination'
+        pagination: '.swiper-pagination',
+        lazyLoading: true
       }
     }
   },
@@ -52,6 +50,23 @@ export default {
         pages[page].push(item)
       })
       return pages
+    }
+  },
+  methods: {
+    toDeatil (id, kind) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: id
+        }
+      })
+      this.$store.state.iconid = id
+      this.$store.state.iconkind = kind
+    },
+    tomore () {
+      this.$store.state.iconChoose = '话剧音乐剧'
+      this.$store.state.iconclassNum = 2
+      this.$router.push('/icon')
     }
   }
 }
@@ -89,10 +104,10 @@ export default {
   .mainTitle-right{
     float: right;
     color: #acacac;
-    font-size: .1rem;
+    font-size: .24rem;
   }
   .mainTitle-right .iconfont{
-    font-size: .1rem;
+    font-size: .24rem;
   }
   .ychbtm{
     display: flex;
@@ -100,10 +115,6 @@ export default {
     height: 0;
     padding-bottom: 130%;
     /*align-items: center;*/
-  }
-  .ychTop img{
-    width: 100%;
-    margin-bottom: 0.15rem;
   }
   .ychRow{
     height: 0;
@@ -118,9 +129,11 @@ export default {
     color: black;
     padding-bottom: 60%;
     box-sizing: border-box;
-    width: 32%;
     float: left;
     height: 0;
+    width: 32%;
+    display: inline-block;
+    margin-bottom: .2rem;
   }
   .ychbtmTextT{
     font-size: .22rem;
@@ -131,14 +144,14 @@ export default {
     margin-top: .15rem;
   }
   .ychbtmTextTime{
-    font-size: .1rem;
+    font-size: .22rem;
     color: #7b7b7b;
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
   }
   .hwxcDivNameAll .hjyyjTime{
-    font-size: .1rem;
+    font-size: .22rem;
     color: #7b7b7b;
     overflow: hidden;
     text-overflow: ellipsis;

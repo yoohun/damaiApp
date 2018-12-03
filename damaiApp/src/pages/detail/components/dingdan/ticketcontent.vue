@@ -2,15 +2,15 @@
   <div>
     <div class="ticket">
       <div class="ticketContent">
-        <span class="ticketHeaderTitle">张杰2018"未·LIVE"巡回演唱会·深圳站</span>
+        <span class="ticketHeaderTitle">{{this.title}}</span>
         <div class="ticketALL">
           <span class="ticketTPN">
             <span class="iconfont">&#xe78b;</span>
-            2018.09.08 | 周六 | 19:30
+            {{this.detailtime}}
           </span>
           <span class="ticketTPN">
             <span class="iconfont">&#xe645;</span>
-            深圳 · 华润深圳湾体育中心"春茧"体育场
+            {{this.place}}
           </span>
           <span class="ticketTPN">
             <span class="iconfont">&#xe63e;</span>
@@ -24,7 +24,12 @@
 
 <script>
 export default {
-  name: 'ticketcontent'
+  name: 'ticketcontent',
+  props: {
+    title: String,
+    detailtime: String,
+    place: String
+  }
 }
 </script>
 

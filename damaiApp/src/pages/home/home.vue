@@ -4,7 +4,6 @@
     <homeswiper :swiperList="swiperList"></homeswiper>
     <homeicon :iconList="iconList"></homeicon>
     <tuijian :tjTopList="tjTopList" :tjBottomList="tjBottomList"></tuijian>
-    <hwsc :hwscList="hwscList"></hwsc>
     <ych :ychSImg="ychSImg" :ychItem="ychItem"></ych>
     <hjyyj :hjyyjItem="hjyyjItem"></hjyyj>
     <tyjj :tyItem="tyItem"></tyjj>
@@ -39,8 +38,7 @@ export default {
       tyItem: [],
       ychSImg: [],
       ychItem: [],
-      hjyyjItem: [],
-      hwscList: []
+      hjyyjItem: []
     }
   },
   components: {
@@ -57,7 +55,7 @@ export default {
   },
   methods: {
     getIndexInfor () {
-      axios.get('/api/index.json?city=' + this.city)
+      axios.get('/api/index.json')
         .then(this.showInfor)
     },
     showInfor (res) {
@@ -95,7 +93,6 @@ export default {
           this.ychSImg = ress[i].ychSImg
           this.ychItem = ress[i].ychItem
           this.hjyyjItem = ress[i].hjyyjItem
-          this.hwscList = ress[i].hwscList
           return
         } else {
           console.log('无匹配值')

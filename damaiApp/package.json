@@ -15,7 +15,6 @@
     "better-scroll": "^1.12.4",
     "fastclick": "^1.0.6",
     "vue": "^2.5.2",
-    "vue-amap": "^0.5.8",
     "vue-awesome-swiper": "^2.6.7",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
@@ -59,6 +58,8 @@
     "shelljs": "^0.7.6",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "url-loader": "^0.5.8",
+    "vue-amap": "^0.5.8",
+    "vue-calendar-component": "^2.7.4",
     "vue-loader": "^13.3.0",
     "vue-style-loader": "^3.0.1",
     "vue-template-compiler": "^2.5.2",

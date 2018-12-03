@@ -22,7 +22,6 @@ export default {
     necessarygj
   },
   mounted () {
-    console.log('验证22')
     this.$store.commit('getToken')
   }
 }

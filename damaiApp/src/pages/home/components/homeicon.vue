@@ -90,7 +90,7 @@ export default {
     padding: .03rem;
   }
   .icon-imgs{
-    height: 55%;
+    height: 45%;
     display: block;
     margin: auto auto;
     position: absolute;
@@ -106,7 +106,7 @@ export default {
     line-height: .44rem;
     height: .44rem;
     text-align: center;
-    font-size: .16rem;
+    font-size: .24rem;
   }
   .acolor{
     color: black;

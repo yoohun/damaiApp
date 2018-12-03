@@ -19,13 +19,13 @@
         <div class="detailxq" ref="rollcontent">
           <span class="detailtime">{{detailcontent.iconitemtitle}}</span>
           <div class="detailplace">
-            <span class="detailplacespan"><span class="placeBlod">{{detailcontent.iconitemplace}}</span> {{detailcontent.iconitemjutiplace}}</span>
+            <span class="detailplacespan" @click="showmap(detailcontent.iconposition)"><span class="placeBlod">{{detailcontent.iconitemplace}}</span> {{detailcontent.iconitemjutiplace}}</span>
           </div>
-          <div class="geshou">
-            <div class="geshouimg">
-              <img :src="detailcontent.yirenimg" alt="">
-              <span class="geshouleibie">{{detailcontent.geshouleibie}}</span>
-            </div>
+          <div class="geshou" v-show="geshou">
+              <div class="geshouimg">
+                <img :src="detailcontent.yirenimg" alt="">
+                <span class="geshouleibie">{{detailcontent.geshouleibie}}</span>
+              </div>
             <div class="geshoujs">
               <div class="namegz">
                 <span class="name">{{detailcontent.geshouname}}</span>
@@ -38,58 +38,53 @@
         <div class="xiangmuxiangq" ref="xiangmuxiangq">
           <span class="bigTitle">项目详情</span>
           <span class="littleTitle">演出简介</span>
-          <div class="textStyle">{{detailcontent.yirenjieshao}}</div>
+          <div class="textStyle">{{detailcontent.yanchujianjie}}</div>
         </div>
         <pinglun @getplheight="getplheight"></pinglun>
         <div class="xuzhisx" ref="xuzhisx" :xzheight="xzheight">
           <span class="bigTitle" >须知事项</span>
-          <div class="secondTitle">
-            <span class="littleTitle">购票须知 </span><span class="iconfont">更多&#xe631;</span>
-          </div>
-          <div class="thirdTitle">
-            <div class="xuzhiItem">
-              <span class="iconfont">&#xe62b;</span>
-              <span class="thirdTitleText">限购说明</span>
-              <span class="textStyle" v-for="(item, index) of detailcontent.goupiaoxuzhi" :key="index">每个账号最多购买4张</span>
+          <div class="thirdTitle" v-show="gpxz">
+            <div class="secondTitle">
+              <span class="littleTitle">购票须知 </span><span class="iconfont">更多&#xe631;</span>
             </div>
-            <div class="xuzhiItem">
+            <div class="xuzhiItem"  v-for="(item, key) of detailcontent.购票须知" :key="key">
               <span class="iconfont">&#xe62b;</span>
-              <span class="thirdTitleText">儿童入场说明</span>
-              <span class="textStyle" v-for="(item, index) of detailcontent.ertongruchang" :key="index">{{detailcontent.ertongruchang}}</span>
-            </div>
-            <div class="xuzhiItem">
-              <span class="iconfont">&#xe62b;</span>
-              <span class="thirdTitleText">选座</span>
-              <span class="textStyle">
-                <p v-for="(item, index) of detailcontent.zuowei" :key="index">{{item}}</p>
-              </span>
+              <span class="thirdTitleText">{{key}}</span>
+              <span class="textStyle">{{item}}</span>
             </div>
           </div>
-          <div class="wxtx">
+          <div class="wxtx" v-show="wxts">
             <div class="secondTitle">
               <span class="littleTitle">温馨提示 </span><span class="iconfont">更多&#xe631;</span>
             </div>
             <div class="thirdTitle">
-              <div class="xuzhiItem">
+              <div class="xuzhiItem"  v-for="(item, key) of detailcontent.温馨提示" :key="key">
                 <span class="iconfont">&#xe62b;</span>
-                <span class="thirdTitleText">演出时长</span>
-                <span class="textStyle">{{detailcontent.yanchushichang}}</span>
+                <span class="thirdTitleText">{{key}}</span>
+                <span class="textStyle">{{item}}</span>
               </div>
             </div>
           </div>
         </div>
         <div class="cjwt">
-          <div class="cjwtTitle">
+          <div class="cjwtTitle border-bottom">
             <span class="bigTitle">常见问题</span>
             <span class="iconfont">更多&#xe631;</span>
           </div>
           <div class="wenti"  ref="cjwenti">
-            <span class="wentiSpan" v-for="(item, index) of detailcontent.problem" :key="index">{{item.problem}}</span>
+            <span class="wentiSpan">有座位图可以查看吗</span>
+            <span class="wentiSpan">我该怎么选座</span>
+            <span class="wentiSpan">我想要订票怎么操作</span>
+            <span class="wentiSpan">儿童也是全票吗</span>
+            <span class="wentiSpan">入场时间是什么时候</span>
+            <span class="wentiSpan">取票地址在哪里</span>
+            <span class="wentiSpan">演出时长大概是多少呢</span>
+            <span class="wentiSpan">我想了解退票规则</span>
           </div>
         </div>
         <div class="tuijian" ref="weinitj" :tjheight="tjheight">
           <span class="bigTitle">为你推荐</span>
-          <div class="tjItem" v-for="item of detailcontent.tuijian" :key="item.id" @click="clickiconitem(item.iconid, item.iconitemtitle)">
+          <div class="tjItem" v-for="item of detailcontent.tuijian" :key="item.id" @click="clickiconitem(item.id, item.iconid)">
             <div class="tiImg">
               <img :src="item.imgUrl" alt="">
             </div>
@@ -123,21 +118,25 @@ export default {
       xzheight: 0,
       tjheight: 0,
       plheight: 0,
-      xq: 0
+      xq: 0,
+      detailtitle: '',
+      geshou: true,
+      wxts: true,
+      gpxz: true
     }
   },
   components: {
     pinglun
   },
   methods: {
-    clickiconitem (iconid, iconitemtitle) {
+    clickiconitem (iconid, iconkind) {
       this.$router.push({
         name: 'detail',
         query: {
           id: iconid
         }
       })
-      this.$store.state.iconitemtitle = iconitemtitle
+      this.$store.state.iconkind = iconkind
       axios.get('/api/detailmsg.json')
         .then(this.showInfor)
     },
@@ -145,16 +144,57 @@ export default {
       for (var k in res.data.data) {
         if (this.$store.state.iconChoose === k) {
           this.detailcontent = res.data.data[k]
-          for (var m in res.data.data[k]) {
-            if (this.$route.query.id === m) {
-              this.detailcontent = res.data.data[k][m]
-            }
+          this.detailcontent = this.detailcontent[this.$route.query.id]
+          if (this.detailcontent['geshouleibie']) {
+            this.geshou = true
+          } else {
+            this.geshou = false
           }
+          if (this.detailcontent['温馨提示']) {
+            this.wxts = true
+          } else {
+            this.wxts = false
+          }
+          if (this.detailcontent['购票须知']) {
+            this.gpxz = true
+          } else {
+            this.gpxz = false
+          }
+          this.$emit('settitle', this.detailcontent['iconitemtitle'])
+        } else if (this.$store.state.iconkind === k) {
+          this.detailcontent = res.data.data[k]
+          this.detailcontent = this.detailcontent[this.$route.query.id]
+          if (this.detailcontent['geshouleibie']) {
+            this.geshou = true
+          } else {
+            this.geshou = false
+          }
+          if (this.detailcontent['温馨提示']) {
+            this.wxts = true
+          } else {
+            this.wxts = false
+          }
+          if (this.detailcontent['购票须知']) {
+            this.gpxz = true
+          } else {
+            this.gpxz = false
+          }
+          this.$emit('settitle', this.detailcontent['iconitemtitle'])
         }
       }
+      console.log(this.detailcontent.iconitemtitle)
+      this.$store.state.detailtitle = this.detailcontent.iconitemtitle
+      this.$store.state.detailtime = this.detailcontent.iconitemtime + ' | ' + this.detailcontent.iconxq
+      this.$store.state.place = this.detailcontent.iconitemplace + this.detailcontent.iconitemjutiplace
     },
     getplheight (height) {
       this.plheight = height
+    },
+    showmap (position) {
+      this.$store.state.position.length = 0
+      this.$store.state.position.push(position[0])
+      this.$store.state.position.push(position[1])
+      this.$router.push('./detail/eachmap')
     }
   },
   mounted () {
@@ -258,17 +298,19 @@ export default {
   display: flex;
   justify-content: space-between;
   margin-bottom: .6rem;
+  overflow: hidden;
+  height: 2.5rem;
 }
 .geshouimg{
-  width: 25%;
+  width: 1.6rem;
+  height: 1.6rem;
   overflow: hidden;
   border-radius: 50%;
   position: relative;
-  height: 25%;
 }
 .geshouleibie{
   position: absolute;
-  bottom: .04rem;
+  bottom: 0;
   left: 0;
   right: 0;
   display: inline-block;
@@ -310,13 +352,21 @@ export default {
   margin-top: .1rem;
   color: #adadad;
   line-height: .4rem;
-  font-size: 10px;
+  font-size: .24rem;
   display: block;
 }
+.jutijieshao{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp:3;
+    overflow: hidden;
+}
 .bigTitle{
-  line-height: 1.2rem;
+  line-height: 1rem;
   font-size: .36rem;
+  margin-bottom: .3rem;
   display: block;
+  border: none;
 }
 .secondTitle{
   display: flex;
@@ -362,7 +412,10 @@ export default {
 .tiText span{
   display: block;
   line-height: .36rem;
-
+}
+.cjwtTitle .bigTitle{
+  border: none;
+  margin-bottom: 0;
 }
 .tiTitle{
   font-size: .28rem;
@@ -378,7 +431,7 @@ export default {
   text-overflow:ellipsis;
   white-space: nowrap;
   width: 100%;
-  font-size: 10px;
+  font-size: .24rem;
 }
 .tuTextUp{
   position: absolute;
@@ -396,7 +449,10 @@ export default {
   color: #ffffff;
   text-align: center;
   border-radius: .05rem .05rem .2rem .05rem;
-  font-size: 8px;
+  font-size: .2rem;
+}
+.wenti{
+  margin-top: .2rem;
 }
 .tiPrice{
   position: absolute;
@@ -409,10 +465,11 @@ export default {
   bottom: .3rem;
   font-size: 10px;
   color: #9f9f9f;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
   width: 100%;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 .tjItem .border-bottom{
   border-bottom: 1px solid #ededed;
@@ -432,9 +489,6 @@ export default {
 .cjwtTitle{
   display: flex;
   justify-content: space-between;
-}
-.cjwtTitle .iconfont{
-  line-height: 1.2rem;
 }
 .wentiSpan{
   padding: 0 .1rem;

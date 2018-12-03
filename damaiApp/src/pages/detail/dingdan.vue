@@ -1,11 +1,11 @@
 <template>
   <div class="ticketdiv">
     <dingdanheader :componenttitle="componenttitle" :linka="linka"></dingdanheader>
-    <ticketcontent></ticketcontent>
+    <ticketcontent :title="title" :place="place" :detailtime="detailtime"></ticketcontent>
     <getticket></getticket>
     <getaddress></getaddress>
     <payfor></payfor>
-    <dingdanbottom></dingdanbottom>
+    <dingdanbottom :ticketprice="ticketprice"></dingdanbottom>
   </div>
 </template>
 
@@ -29,8 +29,18 @@ export default {
   data () {
     return {
       componenttitle: '订单确认',
-      linka: 'detail'
+      linka: 'detail',
+      title: '',
+      place: '',
+      detailtime: '',
+      ticketprice: 0
     }
+  },
+  mounted () {
+    this.title = this.$store.state.detailtitle
+    this.place = this.$store.state.place
+    this.detailtime = this.$store.state.detailtime
+    this.ticketprice = this.$store.state.ticketprice
   }
 }
 </script>

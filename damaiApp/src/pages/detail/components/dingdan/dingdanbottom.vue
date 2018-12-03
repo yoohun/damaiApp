@@ -2,7 +2,7 @@
   <div class="dingdanbottom">
     <span class="agree">我已阅读并同意 <span>《大麦网订票服务条款》</span></span>
     <div class="dingdandetail">
-      <span class="dingdanMoney">480<span>元</span></span>
+      <span class="dingdanMoney"><span>{{this.total}}元</span></span>
       <span class="dingdancaozuo">
         <span class="mingxi" @click="mingxiclick">
           明细
@@ -16,7 +16,7 @@
       <div>
         <span class="ticketTitle">票品信息</span>
         <div class="ticketInfor">
-          <span>180<span>元/张</span> </span>
+          <span>{{this.ticketprice}}<span>元/张</span> </span>
           <span>X1</span>
           <span>180元</span>
         </div>
@@ -33,9 +33,19 @@
 <script>
 export default {
   name: 'dingdanbottom',
+  props: {
+    ticketprice: Number
+  },
   data () {
     return {
-      mingxihide: true
+      mingxihide: true,
+      zhangshu: 1,
+      yunfei: 18
+    }
+  },
+  computed: {
+    total () {
+      return this.yunfei + this.ticketprice * this.zhangshu
     }
   },
   methods: {
@@ -59,7 +69,7 @@ export default {
   background: #ffffff;
 }
 .agree{
-  font-size: 10px;
+  font-size: .24rem;
   color: #989898;
   display: block;
   line-height: .8rem;
@@ -84,11 +94,11 @@ export default {
 }
 .dingdanMoney>span{
   color: #b8b8b8;
-  font-size: 8px;
+  font-size: .28rem;
   margin-left: .06rem;
 }
 .mingxi{
-  font-size: 8px;
+  font-size: .24rem;
 }
 .dingdansubmit{
   line-height: .76rem;

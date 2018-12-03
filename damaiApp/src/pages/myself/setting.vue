@@ -62,7 +62,6 @@ export default {
   },
   methods: {
     Exit () {
-      console.log('退出')
       this.$store.commit('delToken')
       this.$store.state.islogin = false
       this.$router.push('./')

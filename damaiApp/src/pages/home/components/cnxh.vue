@@ -6,12 +6,11 @@
     </div>
     <div class="cnxhContent">
       <div class="cnxhRow">
-        <div class="cnxhItem" v-for="item of cnxhItem" :key="item.id">
+        <div class="cnxhItem" v-for="item of cnxhItem" :key="item.id" @click="toDetail(item.id, item.kind)">
           <img :src="item.cnxhImg" alt="">
           <div class="cnxhText">
             <div class="cnxhDes">
               <span class="cnxhTextTitle">{{item.cnxhTitle}}</span>
-              <span class="cnxhFg cnxhFj">{{item.cnxhFj}}</span>
               <span class="cnxhFg">{{item.cnxhTime}}</span>
             </div>
             <div class="cnxhDesText">
@@ -29,6 +28,18 @@ export default {
   name: 'cnxh',
   props: {
     cnxhItem: Array
+  },
+  methods: {
+    toDetail (id, kind) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: id
+        }
+      })
+      this.$store.state.iconid = id
+      this.$store.state.iconkind = kind
+    }
   }
 }
 </script>
@@ -81,7 +92,7 @@ export default {
     background: #ffffff;
     color: black;
     width: 49%;
-    padding-bottom: 110%;
+    padding-bottom: 100%;
     float: left;
     height: 0;
     margin-bottom: .2rem;
@@ -111,7 +122,7 @@ export default {
     width: auto;
     height: auto;
     padding: 0.05rem;
-    font-size: 0.1rem;
+    font-size: 0.22rem;
     border: 1px solid #b4b4b4;
     border-radius: 0.05rem;
     color: #777777;
@@ -128,6 +139,7 @@ export default {
     overflow: hidden;
     font-size: .24rem;
     margin-top: 0.2rem;
+    color: #777777;
     line-height: .3rem;
   }
   .clear{

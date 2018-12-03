@@ -11,9 +11,9 @@
           <span class="gzText">关注</span>
         </span>
       </div>
-      <router-link to="/detail/chooseweizi" class="detailbottomright">
+      <div class="detailbottomright" @click="chooseweizi">
         <div >选座购买</div>
-      </router-link>
+      </div>
     </div>
   </div>
 </template>
@@ -27,8 +27,8 @@ export default {
     }
   },
   methods: {
-    maizuowei () {
-      console.log('座位')
+    chooseweizi () {
+      this.$router.push('./detail/chooseweizi')
     },
     gz (a) {
       this.activecla = !this.activecla
@@ -43,8 +43,6 @@ export default {
     activecla () {
       this.$store.commit('clickguanzhu', this.activecla)
     }
-  },
-  updated () {
   }
 }
 </script>

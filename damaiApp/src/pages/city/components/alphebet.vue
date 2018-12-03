@@ -77,7 +77,7 @@ export default {
     text-align: center;
   }
   .alphebetLitem{
-    font-size: .1rem;
+    font-size: .26rem;
     line-height: .3rem;
   }
 </style>

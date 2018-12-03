@@ -8,7 +8,7 @@ try {
 let defaultphone = ''
 try {
   if (localStorage.loginphone) {
-    defaultCity = localStorage.loginphone
+    defaultphone = localStorage.loginphone
   }
 } catch (e) {
 }
@@ -18,8 +18,13 @@ export default {
   iconclassNum: -1,
   activeclass: false,
   iconid: '',
-  iconitemtitle: '',
+  iconkind: '',
   loginphone: defaultphone,
   islogin: false,
-  homenavnum: 1
+  homenavnum: 1,
+  position: [121.5923289, 31.21215074],
+  detailtitle: '',
+  detailtime: '',
+  place: '',
+  ticketprice: 0
 }

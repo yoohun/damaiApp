@@ -4,7 +4,7 @@
       <div class="poCity">
         <div class="dwDiv">当前定位城市</div>
         <div class="dqCity">
-          <span class="localCity">{{this.thiscity}}</span>
+          <span class="localCity">{{this.city}}</span>
           <div class="cxdw">
             <span class="iconfont">&#xe645;</span>
             重新定位
@@ -43,6 +43,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Bscroll from 'better-scroll'
 export default {
   name: 'ddcity',
@@ -51,10 +52,8 @@ export default {
     allcity: Object,
     letter: String
   },
-  data () {
-    return {
-      thiscity: ''
-    }
+  computed: {
+    ...mapState(['city'])
   },
   methods: {
     cityclick (city) {
@@ -74,8 +73,6 @@ export default {
     this.scroll = new Bscroll(this.$refs.wrapper, {
       click: true
     })
-    this.thiscity = localStorage.getItem('city')
-    console.log(localStorage.getItem('city'))
   }
 }
 </script>
@@ -90,15 +87,16 @@ export default {
   bottom:0;
 }
 .dwDiv{
-  height: .48rem;
-  line-height: .48rem;
-  font-size: .1rem;
+  height: .6rem;
+  line-height: .7rem;
+  font-size: .26rem;
   padding-left: .4rem;
   color: #929292;
+  box-sizing: border-box;
 }
 .dqCity{
   padding: 0 .4rem;
-  font-size: .2rem;
+  font-size: .28rem;
   background: #ffffff;
   display: flex;
 }
@@ -139,7 +137,7 @@ export default {
   border: 1px solid #cacaca;
   color: #afafaf;
   display: inline-block;
-  font-size: .1rem;
+  font-size: .2rem;
   margin:.1rem;
 }
 .qbCity{

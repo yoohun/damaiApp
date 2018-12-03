@@ -2,14 +2,20 @@
   "ret": true,
   "data": {
     "swiperList": [{
-      "id": "001",
-      "imgUrl": "../../../../static/imgs/1.png"
+      "id": "drama001",
+      "imgUrl": "../../../../static/imgs/1.png",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "002",
-      "imgUrl": "../../../../static/imgs/54.png"
+      "id": "drama002",
+      "imgUrl": "../../../../static/imgs/54.png",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "003",
-      "imgUrl": "../../../../static/imgs/55.png"
+      "id": "concert003",
+      "imgUrl": "../../../../static/imgs/55.png",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "iconList": [{
       "id": "0001",
@@ -45,285 +51,334 @@
       "iconDesc": "电影"
     }],
     "tjTopList": [{
-      "id": "0001",
-      "imgUrl": "../../../../static/imgs/2.png"
+      "id": "concert001",
+      "imgUrl": "../../../../static/imgs/2.png",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0002",
-      "imgUrl": "../../../../static/imgs/3.png"
+      "id": "drama003",
+      "imgUrl": "../../../../static/imgs/3.png",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "tjBottomList": [{
-        "id": "0001",
+        "id": "quyuan0001",
         "imgUrl": "../../../../static/imgs/5.png",
         "imgTitle": "青曲社",
-        "imgDesc": "一哽一笑"
+        "imgDesc": "一哽一笑",
+        "detailtitle": "title",
+        "kind": "话剧音乐剧"
       }, {
-      "id": "0002",
+      "id": "drama004",
       "imgUrl": "../../../../static/imgs/6.png",
       "imgTitle": "聊斋",
-      "imgDesc": "十年再聚"
+      "imgDesc": "十年再聚",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0003",
+      "id": "drama005",
       "imgUrl": "../../../../static/imgs/4.png",
       "imgTitle": "阿凡达",
-      "imgDesc": "首次翱翔"
+      "imgDesc": "首次翱翔",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "tyItem": [{
-        "id": "0001",
+        "id": "physical001",
         "imgUrl": "../../../../static/imgs/20.png",
         "tyTitle": "河北10K唐山站",
-        "tyDesc": "这场赛，值得你奋力一搏"
+        "tyDesc": "这场赛，值得你奋力一搏",
+        "detailtitle": "title",
+        "kind": "话剧音乐剧"
       }, {
-        "id": "0002",
+        "id": "physical002",
         "imgUrl": "../../../../static/imgs/19.png",
         "tyTitle": "爱上水索道划水",
-        "tyDesc": "夏日新玩法，水上大作战"
+        "tyDesc": "夏日新玩法，水上大作战",
+        "detailtitle": "title",
+        "kind": "话剧音乐剧"
       }, {
-      "id": "0003",
+      "id": "physical003",
       "imgUrl": "../../../../static/imgs/21.png",
       "tyTitle": "小马快跑亲子嘉年华",
-      "tyDesc": "让孩子们在自然中狂欢"
+      "tyDesc": "让孩子们在自然中狂欢",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0004",
+      "id": "physical004",
       "imgUrl": "../../../../static/imgs/22.png",
       "tyTitle": "河北10K张家口站",
-      "tyDesc": "跑张家口，冬奥助力"
+      "tyDesc": "跑张家口，冬奥助力",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "cnxhItem": [{
-        "id": "0001",
-        "cnxhImg": "../../../../static/imgs/26.png",
-        "cnxhTime": "即将启程",
-        "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
-        "cnxhFj": "附近",
-        "cnxhTitle": "三里屯德云社剧场"
+        "id": "drama001",
+        "cnxhImg": "../../../../static/imgs/drama001.png",
+        "cnxhTime": "陈佩斯",
+        "cnxhDesc": "陈佩斯在喜剧创作的做了新的尝试，完全打破了传统的观演关系。",
+        "cnxhTitle": "陈佩斯戏剧作品展演《老宅》",
+        "kind": "话剧音乐剧"
       }, {
-      "id": "0002",
-      "cnxhImg": "../../../../static/imgs/31.png",
-      "cnxhTime": "相声专场",
-      "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "德云红酒之夜"
+      "id": "drama021",
+      "cnxhImg": "../../../../static/imgs/drama021.png",
+      "cnxhTime": "李立群",
+      "cnxhDesc": "剧情发人深省，笑中带泪！让你感动在心！！",
+      "cnxhTitle": "2018台湾果陀剧场舞台剧《最后14堂星期二的课》 -厦门",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0003",
-      "cnxhImg": "../../../../static/imgs/33.png",
-      "cnxhTime": "享受街舞",
-      "cnxhDesc": "欢迎你加入嘉禾舞社的舞蹈课堂，享受街舞带来的乐趣！",
-      "cnxhFj": "附近",
-      "cnxhTitle": "嘉禾舞社街舞"
+      "id": "drama022",
+      "cnxhImg": "../../../../static/imgs/drama022.png",
+      "cnxhTime": "意大利",
+      "cnxhDesc": "意大利热那亚卡尔洛·费利切歌剧院 歌剧《托斯卡》",
+      "cnxhTitle": "意大利热那亚卡尔洛·费利切歌剧院 歌剧《托斯卡》",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0004",
-      "cnxhImg": "../../../../static/imgs/29.png",
-      "cnxhTime": "甜蜜升级",
-      "cnxhDesc": "诚意打造专属于乐迷的绝美歌单，给你超乎想象的live互动式生日会",
-      "cnxhFj": "附近",
-      "cnxhTitle": "张弛（校长）带你去旅行生日会"
+      "id": "drama023",
+      "cnxhImg": "../../../../static/imgs/drama023.png",
+      "cnxhTime": "国家话剧院",
+      "cnxhDesc": "再次进行世界巡演！敬请期待！",
+      "cnxhTitle": "2018中国国家话剧院话剧《罗刹国》-厦门",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0005",
-      "cnxhImg": "../../../../static/imgs/28.png",
-      "cnxhTime": "魅力四射",
-      "cnxhDesc": "今生必看的经典音乐剧之一",
-      "cnxhFj": "附近",
-      "cnxhTitle": "猫"
+      "id": "drama024",
+      "cnxhImg": "../../../../static/imgs/drama024.png",
+      "cnxhTime": "庾澄庆",
+      "cnxhDesc": "开心麻花爆笑经典，庾澄庆首部音乐剧。",
+      "cnxhTitle": "开心麻花 庾澄庆首部音乐剧《西哈游记》 深圳站",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0006",
-      "cnxhImg": "../../../../static/imgs/27.png",
-      "cnxhTime": "爆笑经典",
-      "cnxhDesc": "“半分钟一次掌声，一分钟一个笑点。”",
-      "cnxhFj": "附近",
-      "cnxhTitle": "乌龙山伯爵"
+      "id": "drama025",
+      "cnxhImg": "../../../../static/imgs/drama025.png",
+      "cnxhTime": "经典话剧",
+      "cnxhDesc": "经典话剧重现厦门！",
+      "cnxhTitle": "经典音乐剧《搭错车》厦门站",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0007",
-      "cnxhImg": "../../../../static/imgs/35.png",
-      "cnxhTime": "结构喜剧",
-      "cnxhDesc": "一系列行动上的误会、错位，进而构成了一连串的喜剧冲突，让你半分钟一次掌声，一分钟一个笑点。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "春宵保卫战"
+      "id": "drama026",
+      "cnxhImg": "../../../../static/imgs/drama026.png",
+      "cnxhTime": "孟京辉",
+      "cnxhDesc": "荒诞喜剧",
+      "cnxhTitle": "孟京辉荒诞喜剧《蛋》",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "0008",
-      "cnxhImg": "../../../../static/imgs/34.png",
-      "cnxhTime": "喜怒哀乐",
-      "cnxhDesc": "品味上个世纪末大杂院里的喜怒哀乐，体会北京人与外地人之间的冲突温情。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "北京邻居"
+      "id": "concert025",
+      "cnxhImg": "../../../../static/imgs/concert025.png",
+      "cnxhTime": "李志",
+      "cnxhDesc": "以“simple Island”为本次主题，希望带着厦门年轻人的活力，",
+      "cnxhTitle": "2018年简单生活节厦门站",
+      "kind": "演唱会"
     }, {
-      "id": "0009",
-      "cnxhImg": "../../../../static/imgs/33.png",
-      "cnxhTime": "享受街舞",
-      "cnxhDesc": "欢迎你加入嘉禾舞社的舞蹈课堂，享受街舞带来的乐趣！",
-      "cnxhFj": "附近",
-      "cnxhTitle": "嘉禾舞社街舞"
+      "id": "concert023",
+      "cnxhImg": "../../../../static/imgs/concert023.png",
+      "cnxhTime": "神话组合",
+      "cnxhDesc": "阔别香港五年后，再次抵港演出",
+      "cnxhTitle": "2018神话20周年HEART亚洲巡回香港站",
+      "kind": "演唱会"
     }, {
-      "id": "0010",
-      "cnxhImg": "../../../../static/imgs/32.png",
-      "cnxhTime": "通话故事",
-      "cnxhDesc": "这是一个家喻户晓的童话故事受到众多编舞师的青睐，特别适合以舞台剧的形式呈现。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "灰姑娘"
+      "id": "concert022",
+      "cnxhImg": "../../../../static/imgs/concert022.png",
+      "cnxhTime": "张韶涵",
+      "cnxhDesc": "我是6号易天边，请听我的声音，你将会发现有所不同",
+      "cnxhTitle": "2018张韶涵 旅程 世界巡回演唱会",
+      "kind": "演唱会"
     }, {
-      "id": "0011",
-      "cnxhImg": "../../../../static/imgs/31.png",
-      "cnxhTime": "相声专场",
-      "cnxhDesc": "德云社各地分社演出票房持续火爆，也从一定程度上说明了好质量的演出。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "郭德纲德云社"
+      "id": "concert029",
+      "cnxhImg": "../../../../static/imgs/concert029.png",
+      "cnxhTime": "鹿晗",
+      "cnxhDesc": "如果你喜欢一个歌手，请一定要去看一次他的演唱会",
+      "cnxhTitle": "鹿晗2018“RE:X”巡回演唱会",
+      "kind": "演唱会"
     }, {
-      "id": "0012",
-      "cnxhImg": "../../../../static/imgs/30.png",
-      "cnxhTime": "不朽名作",
-      "cnxhDesc": "一场关于爱与自由、欲望与激情的终极拷问。",
-      "cnxhFj": "附近",
-      "cnxhTitle": "卡门"
+      "id": "concert028",
+      "cnxhImg": "../../../../static/imgs/concert028.png",
+      "cnxhTime": "Gai",
+      "cnxhDesc": "Gai、艾福杰尼、艾热即将空降深圳！",
+      "cnxhTitle": "4H潮流音乐节",
+      "kind": "演唱会"
     }],
     "ychSImg": [{
-      "id": "001",
+      "id": "drama0014",
       "imgUrl": "../../../../static/imgs/16.png",
       "imgTitle": "孟京辉戏剧馆",
-      "imgDesc": "萌新老鸟必看"
+      "imgDesc": "萌新老鸟必看",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "002",
+      "id": "drama0015",
       "imgUrl": "../../../../static/imgs/52.png",
       "imgTitle": "七幕人生",
-      "imgDesc": "百老汇音乐剧"
+      "imgDesc": "百老汇音乐剧",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "003",
+      "id": "concert005",
       "imgUrl": "../../../../static/imgs/53.png",
       "imgTitle": "羽泉粉丝征集令",
-      "imgDesc": "免费去现场"
+      "imgDesc": "免费去现场",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "hjyyjItem":[{
-      "id": "001",
-      "img": "../../../../static/imgs/42.png",
-      "title": "林奕华年度大戏《非常林奕华》",
-      "time": "2018.17.07-12.08"
+      "id": "drama001",
+      "img": "../../../../static/imgs/drama001.png",
+      "title": "陈佩斯戏剧作品展演《老宅》",
+      "time": "2018.11.17 19:30",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "002",
-      "img": "../../../../static/imgs/41.png",
-      "title": "爱情轻喜剧《恋爱有8》",
-      "time": "2018.08.08-08.11"
+      "id": "drama021",
+      "img": "../../../../static/imgs/drama021.png",
+      "title": "2018台湾果陀剧场舞台剧《最后14堂星期二的课》 -厦门",
+      "time": "2018.11.11 周日",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "003",
-      "img": "../../../../static/imgs/40.png",
-      "title": "经典小剧场话剧《有多少爱可以胡来》",
-      "time": "2018.07.03-07.07"
+      "id": "drama022",
+      "img": "../../../../static/imgs/drama022.png",
+      "title": "意大利热那亚卡尔洛·费利切歌剧院 歌剧《托斯卡》",
+      "time": "2018.12.30-2019.01.01",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "004",
-      "img": "../../../../static/imgs/43.png",
-      "title": "外百老汇浪漫爱情《长腿叔叔》",
-      "time": "2018.08.29-08.30"
+      "id": "drama023",
+      "img": "../../../../static/imgs/drama023.png",
+      "title": "2018中国国家话剧院话剧《罗刹国》-厦门",
+      "time": "2018.10.31 周三",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "005",
-      "img": "../../../../static/imgs/44.png",
-      "title": "2018英国原版引进《小猪佩奇》",
-      "time": "2018.09.15-09.16"
+      "id": "drama024",
+      "img": "../../../../static/imgs/drama024.png",
+      "title": "开心麻花 庾澄庆首部音乐剧《西哈游记》 深圳站",
+      "time": "2018.11.16-11.18",
+      "kind": "话剧音乐剧"
     }, {
-      "id": "006",
-      "img": "../../../../static/imgs/45.png",
+      "id": "drama025",
+      "img": "../../../../static/imgs/drama025.png",
+      "title": "经典音乐剧《搭错车》厦门站",
+      "time": "2018.11.24 19:30",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama026",
+      "img": "../../../../static/imgs/drama026.png",
+      "title": "孟京辉荒诞喜剧《蛋》",
+      "time": "2018.11.30-12.02",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama027",
+      "img": "../../../../static/imgs/drama027.png",
+      "title": "孟京辉经典爆笑作品《两只狗的生活意见》",
+      "time": "2018.11.23-11.25",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama028",
+      "img": "../../../../static/imgs/drama028.png",
+      "title": "陈佩斯首次舞台剧尝试《托儿》",
+      "time": "2018.10.22 19:30",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama029",
+      "img": "../../../../static/imgs/drama029.png",
+      "title": "2018原创全家欢儿童音乐剧《孙悟空智斗牛魔王》 汕头站",
+      "time": "2018.08.29-08.30",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama030",
+      "img": "../../../../static/imgs/drama030.png",
+      "title": "2018《驴得水The Donkey》 -深圳",
+      "time": "2018.11.20-11.21",
+      "kind": "话剧音乐剧"
+    }, {
+      "id": "drama021",
+      "img": "../../../../static/imgs/drama021.png",
       "title": "【七幕&保利出品《灰姑娘》】",
-      "time": "2018.07.12-07.22"
-    }, {
-      "id": "007",
-      "img": "../../../../static/imgs/42.png",
-      "title": "林奕华年度大戏《非常林奕华》",
-      "time": "2018.17.07-12.08"
-    }, {
-      "id": "008",
-      "img": "../../../../static/imgs/41.png",
-      "title": "爱情轻喜剧《恋爱有8》",
-      "time": "2018.08.08-08.11"
-    }, {
-      "id": "009",
-      "img": "../../../../static/imgs/40.png",
-      "title": "经典小剧场话剧《有多少爱可以胡来》",
-      "time": "2018.07.03-07.07"
-    }, {
-      "id": "010",
-      "img": "../../../../static/imgs/43.png",
-      "title": "外百老汇浪漫爱情《长腿叔叔》",
-      "time": "2018.08.29-08.30"
-    }, {
-      "id": "011",
-      "img": "../../../../static/imgs/44.png",
-      "title": "2018英国原版引进《小猪佩奇》",
-      "time": "2018.09.15-09.16"
-    }, {
-      "id": "012",
-      "img": "../../../../static/imgs/45.png",
-      "title": "【七幕&保利出品《灰姑娘》】",
-      "time": "2018.07.12-07.22"
+      "time": "2018.07.12-07.22",
+      "detailtitle": "title",
+      "kind": "话剧音乐剧"
     }],
     "ychItem":[{
-      "id": "001",
-      "img": "../../../../static/imgs/46.png",
-      "title": "YOONA FANMETTING",
-      "time": "2018.08.04 19:30"
+      "id": "concert020",
+      "img": "../../../../static/imgs/concert020.png",
+      "title": "2018周杰伦地表最强2巡回演唱会泉州站 10月28日",
+      "time": "2018.10.28 20:00",
+      "detailtitle": "2018周杰伦地表最强2巡回演唱会泉州站 10月28日",
+      "kind": "演唱会"
     }, {
-      "id": "002",
-      "img": "../../../../static/imgs/47.png",
-      "title": "陈慧娴Priscilla-ism",
-      "time": "2018.10.27 19:30"
+      "id": "concert023",
+      "img": "../../../../static/imgs/concert023.png",
+      "title": "2018神话20周年HEART亚洲巡回香港站",
+      "time": "2018.11.24 19:00",
+      "detailtitle": "2018神话20周年HEART亚洲巡回香港站",
+      "kind": "演唱会"
     }, {
-      "id": "003",
-      "img": "../../../../static/imgs/48.png",
-      "title": "刘瑞琦“温暖的房间”",
-      "time": "2018.09.15 20:00"
+      "id": "concert025",
+      "img": "../../../../static/imgs/concert025.png",
+      "title": "2018年简单生活节厦门站”",
+      "time": "2018.11.03-11.04",
+      "detailtitle": "2018年简单生活节厦门站",
+      "kind": "演唱会"
     }, {
-      "id": "004",
-      "img": "../../../../static/imgs/51.png",
-      "title": "RADWIMPS Aisa Live Tour 2018",
-      "time": "2018.08.15 20:00"
+      "id": "concert021",
+      "img": "../../../../static/imgs/concert021.png",
+      "title": "2018莫文蔚巡回演唱会泉州站",
+      "time": "2018.11.24 19:30",
+      "detailtitle": "2018莫文蔚巡回演唱会泉州站",
+      "kind": "演唱会"
     }, {
-      "id": "005",
-      "img": "../../../../static/imgs/50.png",
-      "title": "MIKE SHINODA TOUR",
-      "time": "2018.08.07 20:00"
+      "id": "concert024",
+      "img": "../../../../static/imgs/concert024.png",
+      "title": "'s...TAEYEON CONCERT in HONG KONG",
+      "time": "2018.11.17 19:00",
+      "detailtitle": "'s...TAEYEON CONCERT in HONG KONG",
+      "kind": "演唱会"
     }, {
-      "id": "006",
-      "img": "../../../../static/imgs/49.png",
-      "title": "2018 PARK YUCINKY",
-      "time": "2018.07.07 14:00"
+      "id": "concert022",
+      "img": "../../../../static/imgs/concert022.png",
+      "title": "2018张韶涵 旅程 世界巡回演唱会--深圳站",
+      "time": "2018.11.03 19:30",
+      "detailtitle": "2018张韶涵 旅程 世界巡回演唱会--深圳站",
+      "kind": "演唱会"
     }, {
-      "id": "007",
-      "img": "../../../../static/imgs/46.png",
-      "title": "YOONA FANMETTING",
-      "time": "2018.08.04 19:30"
+      "id": "concert029",
+      "img": "../../../../static/imgs/concert029.png",
+      "title": "鹿晗2018“RE:X”巡回演唱会 深圳站",
+      "time": "2018.11.09",
+      "detailtitle": "鹿晗2018“RE:X”巡回演唱会 深圳站",
+      "kind": "演唱会"
     }, {
-      "id": "008",
-      "img": "../../../../static/imgs/47.png",
-      "title": "陈慧娴Priscilla-ism",
-      "time": "2018.10.27 19:30"
+      "id": "concert027",
+      "img": "../../../../static/imgs/concert027.png",
+      "title": "ZICO “King of the Zungle”Tour in Hong Kong",
+      "time": "2018.11.18 20:00",
+      "detailtitle": "ZICO “King of the Zungle”Tour in Hong Kong",
+      "kind": "演唱会"
     }, {
-      "id": "009",
-      "img": "../../../../static/imgs/48.png",
-      "title": "刘瑞琦“温暖的房间”",
-      "time": "2018.09.15 20:00"
+      "id": "concert030",
+      "img": "../../../../static/imgs/concert030.png",
+      "title": "2018.11.11 “唱给单身汪”光棍节主题演唱会-深圳站",
+      "time": "2018.11.11 周日",
+      "detailtitle": "2018.11.11 “唱给单身汪”光棍节主题演唱会-深圳站",
+      "kind": "演唱会"
     }, {
-      "id": "010",
-      "img": "../../../../static/imgs/51.png",
-      "title": "RADWIMPS Aisa Live Tour 2018",
-      "time": "2018.08.15 20:00"
+      "id": "concert31",
+      "img": "../../../../static/imgs/concert31.png",
+      "title": "2018万圣节重磅活动魔女惊魂主题惊悚派对",
+      "time": "2018.10.27 周日",
+      "detailtitle": "2018万圣节重磅活动魔女惊魂主题惊悚派对",
+      "kind": "演唱会"
     }, {
-      "id": "011",
-      "img": "../../../../static/imgs/50.png",
-      "title": "MIKE SHINODA TOUR",
-      "time": "2018.08.07 20:00"
+      "id": "concert028",
+      "img": "../../../../static/imgs/concert028.png",
+      "title": "4H潮流音乐节",
+      "time": "2018.11.10 18:00",
+      "detailtitle": "4H潮流音乐节",
+      "kind": "演唱会"
     }, {
-      "id": "012",
-      "img": "../../../../static/imgs/49.png",
-      "title": "2018 PARK YUCINKY",
-      "time": "2018.07.07 14:00"
-    }],
-    "hwscList" :[{
-      "id": "01",
-      "imgUrl": "../../../../static/imgs/12.png",
-      "userImg": "../../../../static/imgs/14.png",
-      "userTitle": "香港 | 婕西",
-      "userDesc": "歌王 Jessie J"
-    },
-      {
-        "id": "02",
-        "imgUrl": "../../../../static/imgs/13.png",
-        "userImg": "../../../../static/imgs/15.png",
-        "userTitle": "东方神起",
-        "userDesc": "香港！ 终于等到你"
-      }]
+      "id": "concert026",
+      "img": "../../../../static/imgs/concert026.png",
+      "title": "陈柏宇Speedchless巡回音乐会汕头站",
+      "time": "2018.11.24 20:00",
+      "detailtitle": "陈柏宇Speedchless巡回音乐会汕头站",
+      "kind": "演唱会"
+    }]
   }
 }

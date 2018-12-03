@@ -9,7 +9,7 @@
     <div class="detailHeader" v-show="!this.headerup">
       <div class="detailTop">
         <span class="iconfont" @click="backto">&#xe625;</span>
-        <span class="detailTitle">{{this.$store.state.iconitemtitle}}</span>
+        <span class="detailTitle">{{this.detailtitle}}</span>
         <span class="iconfont">&#xe624;</span>
       </div>
       <div class="detailIcon">
@@ -30,7 +30,8 @@ export default {
     xqheight: Number,
     xzheight: Number,
     tjheight: Number,
-    indexNum: Number
+    indexNum: Number,
+    detailtitle: String
   },
   data () {
     return {
@@ -60,7 +61,7 @@ export default {
       }
     },
     backto () {
-      this.$router.go(-1)
+      history.back()
     }
   },
   watch: {

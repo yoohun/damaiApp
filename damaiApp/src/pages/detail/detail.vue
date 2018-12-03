@@ -1,7 +1,7 @@
 <template>
   <div>
-    <detailheader :headerup="headerup" :xqheight="xqheight" :xzheight="xzheight" :tjheight="tjheight" :indexNum="indexNum"></detailheader>
-    <detailcontent @showxq="showxq" @showxz="showxz" @showtj="showtj"></detailcontent>
+    <detailheader :headerup="headerup" :xqheight="xqheight" :xzheight="xzheight" :tjheight="tjheight" :indexNum="indexNum" :detailtitle="detailtitle"></detailheader>
+    <detailcontent :key="key" @showxq="showxq" @showxz="showxz" @showtj="showtj" @settitle="settitle"></detailcontent>
     <detailbottom></detailbottom>
   </div>
 </template>
@@ -20,7 +20,8 @@ export default {
       xqheight: 0,
       xzheight: 0,
       tjheight: 0,
-      indexNum: 0
+      indexNum: 0,
+      detailtitle: ''
     }
   },
   components: {
@@ -54,10 +55,18 @@ export default {
     },
     showtj (value) {
       this.tjheight = value
+    },
+    settitle (title) {
+      this.detailtitle = title
     }
   },
   mounted () {
     window.addEventListener('scroll', this.handleScroll)
+  },
+  computed: {
+    key () {
+      return this.$route.name !== undefined ? this.$route.name + new Date() : this.$route + new Date()
+    }
   }
 }
 </script>

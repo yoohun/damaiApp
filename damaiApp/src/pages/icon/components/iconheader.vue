@@ -2,9 +2,7 @@
   <div class="icontop">
     <div class="headerTop">
       <div class="iconheader" >
-        <router-link to='/'>
           <span class="iconfont iconback" @click="iconbackbtn">&#xe625;</span>
-        </router-link>
         <span @click="showicon">
           {{this.$store.state.iconChoose}}
         </span>
@@ -77,7 +75,6 @@ export default {
       this.iconD = true
       this.iconU = false
       this.$store.state.iconChoose = e.target.innerText
-      console.log(this.$store.state.iconChoose)
       this.$store.state.iconclassNum = this.classnum
     },
     iconclick (index) {
@@ -87,6 +84,7 @@ export default {
       this.iconD = true
       this.iconU = false
       this.iconchoice = false
+      this.$router.back()
     }
   },
   updated: function () {
@@ -151,5 +149,8 @@ export default {
 }
 .showUl{
   display: block;
+}
+.headerTop{
+  padding: 0;
 }
 </style>

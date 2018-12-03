@@ -77,7 +77,7 @@ export default {
       if (localStorage.getItem('loginphone')) {
         console.log('有')
       } else {
-        this.$router.push('./myself/changezh')
+        this.$router.push('/myself/changezh')
       }
     }
   }

@@ -1,85 +1,52 @@
 <template>
   <div ref="scrollZW">
-    <swiper class="swiper-seckill zuowei" :not-next-tick="true" :options="swiperOption">
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-      <swiper-slide class="seckill-slide zuoweiItem">
-        <span class="zuoweiIcon iconfont">&#xe63f;</span>
-        <span class="zuoweiText">1280元</span>
-      </swiper-slide>
-    </swiper>
+    <div class="zuowei">
+      <div class="zuoweiItem" v-for="(item, index) of price" :key="item" @click="choseprice(index, item)">
+        <span class="zuoweiIcon iconfont" :class="{active:index == classnum}">&#xe63f;</span>
+        <span class="zuoweiText">{{item}}元</span>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
-import {swiper, swiperSlide} from 'vue-awesome-swiper'
 export default {
   name: 'zuowei',
   data () {
     return {
-      swiperOption: {
-        slidesPerView: 'auto',
-        grabCursor: true,
-        setWrapperSize: true,
-        autoHeight: true,
-        freeMode: true,
-        observer: true
-      }
+      price: [480, 580, 680, 980, 1080],
+      classnum: -1
     }
   },
-  components: {
-    swiper,
-    swiperSlide
+  methods: {
+    choseprice (index, item) {
+      this.classnum = index
+      this.$store.state.ticketprice = item
+    }
   }
 }
 </script>
 
 <style>
 .zuowei{
-  width: 400%;
-  height: .7rem;
+  width: 100%;
+  height: auto;
   background: #e5e5e5;
   padding: .09rem;
   box-sizing: border-box;;
   overflow: hidden;
   display: flex;
-  justify-content: space-between;
-}
-.swiper-wrapper{
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
 }
 .zuoweiItem{
-  width: 1.6rem;
-  height: .5rem;
+  width: 1.5rem;
+  line-height: .6rem;
   background: #ffffff;
   text-align: center;
   border-radius: .08rem;
   position: relative;
   display: inline-block;
-  margin: 0 .05rem;
+  margin: .1rem .1rem;
   padding: 0;
 }
 .zuoweiItem::before{
@@ -100,6 +67,9 @@ export default {
 .zuoweiItem span{
   display: inline-block;
   line-height: .5rem;
+}
+.active{
+  color: deeppink;
 }
 .zuoweiText{
   font-size: 10px;

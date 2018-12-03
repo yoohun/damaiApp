@@ -6,11 +6,11 @@ import router from './router'
 import store from './store'
 import fastClick from 'fastclick'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
+import AMap from 'vue-amap'
 import 'swiper/dist/css/swiper.css'
 import './assets/style/reset.css'
 import './assets/style/border.css'
 import './assets/style/iconfont.css'
-import AMap from 'vue-amap'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
@@ -19,10 +19,6 @@ Vue.use(AMap)
 AMap.initAMapApiLoader({
   key: 'f344ecdb9ad25931372e524301dcb7ba',
   plugin: ['AMap.Autocomplete', 'AMap.PlaceSearch', 'AMap.Scale', 'AMap.OverView', 'AMap.ToolBar', 'AMap.MapType', 'AMap.PolyEditor', 'AMap.CircleEditor']
-})
-
-router.afterEach((to, from, next) => {
-  window.scrollTo(0, 0)
 })
 
 /* eslint-disable no-new */

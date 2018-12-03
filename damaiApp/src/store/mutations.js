@@ -19,7 +19,6 @@ export default {
   },
   showdetail (iconid) {
     this.state.iconid = iconid
-    console.log(this.state.iconid)
   },
   setToken (ctx, logininfor) {
     if (window.localStorage) {
@@ -33,19 +32,12 @@ export default {
     var token = localStorage.getItem('loginphone')
     if (token) {
       this.state.islogin = true
-      console.log(this.state.islogin)
-      console.log(token)
     } else {
       this.state.islogin = false
-      console.log(this.state.islogin)
     }
   },
   delToken () {
     localStorage.removeItem('loginphone')
     console.log('已删除')
-  },
-  isLogin (state, msg) {
-    state.isLogin = msg
-    this.setToken('isLogin', msg)
   }
 }

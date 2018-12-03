@@ -211,34 +211,29 @@
           <span class="iconfont dagou">&#xe63c;</span>
         </li>
       </ul>
-      <ul class="allTime hideClass" v-show="!timeU" @click="chosetime">
-        <li>
-          <span>
-            推荐
-          </span>
-        </li>
-        <li>
-          <span>
-            距离
-          </span>
-        </li>
-        <li>
-          <span>
-            最近
-          </span>
-        </li>
-      </ul>
+      <Calendar
+        v-if="hackReset"
+        v-show="!timeU"
+        v-on:choseDay="clickDay"
+        class="date"
+      ></Calendar>
       <div class="hideBack" v-show="hidebackN"></div>
     </div>
   </div>
 </template>
 
 <script>
+import Calendar from 'vue-calendar-component'
 import Bscroll from 'better-scroll'
 export default {
   name: 'iconshaixuan',
+  components: {
+    Calendar
+  },
   data () {
     return {
+      hackReset: false,
+      arr: [{date: '2018/4/1', className: 'mark1'}, {date: '2018/4/13', className: 'mark2'}],
       chosezlnum: -1,
       paixuU: true,
       timeU: true,
@@ -246,14 +241,15 @@ export default {
       shijian: false,
       showSx: false,
       finallChose: null,
-      paixudata: [{id: '001', content: '推荐排序'}, {id: '002', content: '距离最近'}, {id: '003', content: '最近开场'}],
+      paixudata: [{id: '001', content: '推荐排序'}, {id: '003', content: '最近开场'}],
       paixudataClass: 0,
       zileimingcheng: [{id: '01', content: '流行'}, {id: '02', content: '摇滚'}, {id: '03', content: '民族'}, {id: '04', content: '音乐节'}, {id: '05', content: '其他'}]
     }
   },
   methods: {
-    chosetime () {
-      console.log('1112123123')
+    clickDay (data) {
+      console.log(data)
+      this.$emit('clickDay', data)
       this.timeU = true
     },
     resetall () {
@@ -289,20 +285,9 @@ export default {
     paixuchoose (index) {
       this.$emit('paixu', index)
       this.paixudataClass = index
-      switch (index) {
-        case 0:
-          console.log(0)
-          break
-        case 1:
-          console.log(1)
-          break
-        case 2:
-          console.log(2)
-          break
-        default:
-          console.log('选择错误')
-      }
+      this.$emit('chosehide', index)
       this.paixuU = true
+      console.log(index)
     },
     choseCity (e) {
       this.$store.state.defaultCity = e.target.innerText
@@ -317,6 +302,15 @@ export default {
     this.scroll = new Bscroll(this.$refs.rollsx, {
       click: true
     })
+  },
+  activated () {
+    this.paixudataClass = 0
+    this.paixuU = true
+    this.timeU = true
+    this.hackReset = false
+    this.$nextTick(() => {
+      this.hackReset = true
+    })
   }
 }
 </script>
@@ -329,6 +323,39 @@ export default {
     right: 0;
     background: #ffffff;
     z-index: 6;
+  }
+  .date .wh_content_all[data-v-59b8f458]{
+    background: #f9f9f9;
+  }
+  .date .wh_content_item .wh_other_dayhide[data-v-59b8f458]{
+    color: #a4a4a4;
+  }
+  .date .wh_content_item .wh_isToday[data-v-59b8f458]{
+    background: #ffa3a7;
+    border-radius: 0;
+    color: white;
+  }
+  .date .wh_content_item .wh_chose_day[data-v-59b8f458]{
+    background:deeppink;
+    border-radius: 0;
+    color: white;
+  }
+  .wh_top_tag[data-v-59b8f458]{
+    color: black;
+  }
+  .wh_item_date[data-v-59b8f458]{
+    color: black;
+  }
+  .date .wh_jiantou1[data-v-59b8f458]{
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+  }
+  .date .wh_jiantou2[data-v-59b8f458]{
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+  }
+  .date .wh_top_changge li[data-v-59b8f458]{
+    color: black;
   }
   .shaixuanDiv{
     position: absolute;

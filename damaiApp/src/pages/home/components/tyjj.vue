@@ -2,11 +2,11 @@
   <div class="tyjj">
     <div class="mainTitle">
       <span class="mainTitle-left">体育竞技</span>
-      <span class="mainTitle-right">更多 <span class="iconfont">&#xe631;</span> </span>
+      <span class="mainTitle-right" @click="tomore">更多 <span class="iconfont">&#xe631;</span> </span>
     </div>
     <div class="tyjjImg">
       <div class="tyRow">
-        <div class="tyItem" v-for="item of tyItem" :key="item.id">
+        <div class="tyItem" v-for="item of tyItem" :key="item.id"  @click="toDetail(item.id, item.kind)">
           <img :src="item.imgUrl" alt="">
           <div class="hwxcDivName">
             <div class="hwxcDivNameAll">
@@ -25,6 +25,23 @@ export default {
   name: 'tyjj',
   props: {
     tyItem: Array
+  },
+  methods: {
+    toDetail (id, kind) {
+      this.$router.push({
+        name: 'detail',
+        query: {
+          id: id
+        }
+      })
+      this.$store.state.iconid = id
+      this.$store.state.iconkind = kind
+    },
+    tomore () {
+      this.$store.state.iconChoose = '体育比赛'
+      this.$store.state.iconclassNum = 4
+      this.$router.push('/icon')
+    }
   }
 }
 </script>
@@ -62,7 +79,7 @@ export default {
     height: .5rem;
   }
   .tyItem .hwxcDivNameAll .hwxcDivNameBottom{
-    font-size: .1rem;
+    font-size: .22rem;
     color: #000000;
     display: block;
     overflow: hidden;
@@ -73,6 +90,8 @@ export default {
     overflow: hidden;
     text-overflow:ellipsis;
     white-space: nowrap;
+    margin: .2rem 0;
+    font-size: .22rem;
   }
   .hwxcDivNameAll{
     width: 100%;

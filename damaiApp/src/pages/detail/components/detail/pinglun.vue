@@ -1,6 +1,6 @@
 <template>
   <div class="pl" ref="pingluntop">
-    <div class="plUp">
+    <div class="plUp border-bottom">
       <span class="bigTitle">评论</span>
       <span class="writepl">写评论</span>
     </div>
@@ -21,9 +21,9 @@
           <span>{{item.huifu}}</span>
           <span class="iconfont">&#xe637;</span>
         </div>
-        <div class="dianzan" @click="zan">
-          <span>{{item.zan}}</span>
-          <span class="iconfont">&#xe60c;</span>
+        <div class="dianzan" @click="zan(item.id)" >
+          <span :class="{active:clickzan == item.id}">{{item.zan}}</span>
+          <span class="iconfont" :class="{active:clickzan == item.id}">&#xe60c;</span>
         </div>
       </div>
     </div>
@@ -38,19 +38,20 @@ export default {
   name: 'pinglun',
   data () {
     return {
+      clickzan: 0,
       plItem: [{
-        id: '001', userimg: '../../../../static/imgs/geshouimg.jpg', username: '吴世勋', usertime: '1分钟前', plneirong: '吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋吴世勋', huifu: '回复', zan: '赞'}, {
-        id: '002', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun', usertime: '10分钟前', plneirong: '吴世勋吴世勋吴世勋世勋吴世勋吴世勋', huifu: '1', zan: '5'}, {
-        id: '003', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun', usertime: '10分钟前', plneirong: '吴世勋吴世勋吴世勋世勋吴世勋吴世勋', huifu: '1', zan: '5'}, {
-        id: '004', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun', usertime: '10分钟前', plneirong: '吴世勋吴世勋吴世勋世勋吴世勋吴世勋', huifu: '1', zan: '5'}]
+        id: '001', userimg: '../../../../static/imgs/geshouimg.jpg', username: '吴世勋', usertime: '1分钟前', plneirong: '棒！', huifu: '回复', zan: '赞'}, {
+        id: '002', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun', usertime: '10分钟前', plneirong: '好', huifu: '1', zan: '5'}, {
+        id: '003', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun1', usertime: '10分钟前', plneirong: '期待', huifu: '1', zan: '5'}, {
+        id: '004', userimg: '../../../../static/imgs/geshouimg.jpg', username: 'sehun2', usertime: '10分钟前', plneirong: '不错', huifu: '1', zan: '5'}]
     }
   },
   methods: {
     huifu (e) {
       console.log(e.target.innerText)
     },
-    zan (e) {
-      console.log(e.target.innerText)
+    zan (id) {
+      this.clickzan = !this.clickzan
     }
   },
   mounted () {
@@ -63,10 +64,17 @@ export default {
   body{
     background: #ffffff;
   }
+  .active{
+    color: red;
+  }
+  .bigTitle{
+    border: none;
+  }
   .plUp{
     display: flex;
     justify-content: space-between;
   }
+  .plUp .
   .writepl{
     width: 1.2rem;
     height: .4rem;
@@ -74,7 +82,6 @@ export default {
     text-align: center;
     border: 1px solid deeppink;
     color: deeppink;
-    margin-top: .38rem;
     font-size: 10px;
     border-radius: .2rem;
   }
