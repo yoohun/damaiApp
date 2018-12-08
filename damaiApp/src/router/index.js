@@ -50,7 +50,10 @@ export default new Router({
     }, {
       path: '/detail/chooseweizi',
       name: 'chooseweizi',
-      component: chooseweizi
+      component: chooseweizi,
+      meta: {
+        keepAlive: true
+      }
     }, {
       path: '/detail/dingdan',
       name: 'dingdan',

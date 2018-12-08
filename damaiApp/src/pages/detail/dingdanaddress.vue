@@ -26,14 +26,19 @@
         <div class="cleanAddress">
           <textarea name=""  placeholder="请填写详细地址，不少于4个字" id="addressIpt"></textarea>
         </div>
+        <chosecity></chosecity>
       </form>
     </div>
   </div>
 </template>
 
 <script>
+import chosecity from './components/dingdan/chosecity.vue'
 export default {
-  name: 'dingdanaddress'
+  name: 'dingdanaddress',
+  components: {
+    chosecity
+  }
 }
 </script>
 
