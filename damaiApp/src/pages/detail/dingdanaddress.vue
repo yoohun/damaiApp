@@ -17,8 +17,13 @@
           <span>手机号</span>
           <input type="text" placeholder="a">
         </div>
-        <div class="place">
-          <span>所在地区</span>
+        <div class="index">
+          <div class="page-content">
+            <mt-cell title="省市区:" :value="areaString" is-link @click.native="handlerArea"></mt-cell>
+            <mt-popup v-model="areaVisible" class="area-class" position="bottom">
+              <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+            </mt-popup>
+          </div>
         </div>
         <div class="street">
           <span>街道</span>
@@ -26,23 +31,107 @@
         <div class="cleanAddress">
           <textarea name=""  placeholder="请填写详细地址，不少于4个字" id="addressIpt"></textarea>
         </div>
-        <chosecity></chosecity>
       </form>
     </div>
   </div>
 </template>
 
 <script>
-import chosecity from './components/dingdan/chosecity.vue'
+import data from '../../../static/mock/data.json'
+let index = 0
+let index2 = 0
+let index3 = 0
+// 初始化省
+let province = data.map(res => {
+  return res.name
+})
+// 初始化市
+let city = data[index].childs.map(res => {
+  return res.name
+})
+// 初始化区
+let area = data[index].childs[index2].childs.map(res => {
+  return res.name
+})
 export default {
   name: 'dingdanaddress',
-  components: {
-    chosecity
+  data () {
+    return {
+      areaVisible: false,
+      areaString: '请选择',
+      slots: [{
+        flex: 1,
+        values: province,
+        className: 'slot1',
+        textAlign: 'left'
+      }, {
+        divider: true,
+        content: '-',
+        className: 'slot2'
+      }, {
+        flex: 1,
+        values: city,
+        className: 'slot3',
+        textAlign: 'left'
+      }, {
+        divider: true,
+        content: '-',
+        className: 'slot4'
+      }, {
+        flex: 1,
+        values: area,
+        className: 'slot5',
+        textAlign: 'left'
+      }]
+    }
+  },
+  methods: {
+    handlerArea () {
+      this.areaVisible = true
+    },
+    onValuesChange (picker, values) {
+      let one = values[0]
+      let two = values[1]
+      let three = values[2]
+      index = province.indexOf(one)
+      if (index >= 0 && province.length > 0) {
+        city = data[index].childs.map(res => {
+          return res.name
+        })
+        picker.setSlotValues(1, city)
+        two = values[1]
+      }
+
+      index2 = city.indexOf(two)
+      if (index2 >= 0 && city.length > 0) {
+        area = data[index].childs[index2].childs.map(res => {
+          return res.name
+        })
+        picker.setSlotValues(2, area)
+        three = values[2]
+      }
+      index3 = area.indexOf(three)
+      this.areaString = values.join(',')
+    }
   }
 }
 </script>
 
 <style>
+  .area-class {
+    width: 100%;
+    height: 50%;
+  }
+  .mint-cell .mint-cell-mask{
+    display: none;
+  }
+  .mint-cell-value{
+    flex: 1;
+  }
+  .mint-cell-wrapper{
+    margin: 0;
+    padding: 0;
+  }
   .dingdanheader{
     height: .8rem;
     background: white;
@@ -107,5 +196,28 @@ export default {
     line-height: .4rem;
     resize: none;
     padding-top: .2rem;
+  }
+  .mint-cell-title{
+    width: 1.5rem;
+    flex: 0;
+    border-bottom:none;
+  }
+  .mint-cell-title span {
+    width: 1.5rem;
+    border-bottom:none;
+  }
+  .mint-cell-wrapper .mint-cell-value span{
+    display: inline-block;
+    width: 100%;
+    border-bottom: none;
+  }
+  .addressContent .index{
+    border-bottom: none;
+  }
+  .mint-cell-value.is-link{
+    border-bottom: none;
+  }
+  .mint-cell-wrapper .mint-cell-title{
+    border-bottom: none;
   }
 </style>

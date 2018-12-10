@@ -1,105 +1,70 @@
 <template>
   <div>
-    <mt-picker :slots="myAddressSlots" @change="onMyAddressChange"></mt-picker>
-    <p>地址3级联动：{{myAddressProvince}} {{myAddressCity}} {{myAddresscounty}}</p>
+    <mt-popup v-model="areaVisible" class="area-class" position="bottom">
+      <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+    </mt-popup>
   </div>
 </template>
 
 <script>
-import { Picker } from 'mint-ui'
+import data from '../../..///data.json'
+let index = 0
+let index2 = 0
+let index3 = 0
+  // 初始化省
+let province = data.map(res => {
+  return res.name
+})
+// 初始化市
+let city = data[index].childs.map(res => {
+  return res.name
+})
+// 初始化区
+let area = data[index].childs[index2].childs.map(res => {
+  return res.name
+})
 export default {
   name: 'chosecity',
-  components: {
-    'mt-picker': Picker
-  },
   data () {
-
     return {
-
-      myAddressSlots: [
-
-        {
-
-          flex: 1,
-
-          defaultIndex: 1,
-
-          values: Object.keys(myaddress),  //省份数组
-
-          className: 'slot1',
-
-          textAlign: 'center'
-
-        }, {
-
-          pider: true,
-
-          content: '-',
-
-          className: 'slot2'
-
-        }, {
-
-          flex: 1,
-
-          values: [],
-
-          className: 'slot3',
-
-          textAlign: 'center'
-
-        },
-
-        {
-
-          pider: true,
-
-          content: '-',
-
-          className: 'slot4'
-
-        },
-
-        {
-
-          flex: 1,
-
-          values: [],
-
-          className: 'slot5',
-
-          textAlign: 'center'
-
-        }
-
-      ],
-
-      myAddressProvince:'省',
-
-      myAddressCity:'市',
-
-      myAddresscounty:'区/县',
-
+      areaVisible: false,
+      streetVisible: false,
+      areaString: '请选择',
+      streetString: '请选择',
+      slots: [{
+        flex: 1,
+        values: province,
+        className: 'slot1',
+        textAlign: 'left'
+      }, {
+        divider: true,
+        content: '-',
+        className: 'slot2'
+      }, {
+        flex: 1,
+        values: city,
+        className: 'slot3',
+        textAlign: 'left'
+      }, {
+        divider: true,
+        content: '-',
+        className: 'slot4'
+      }, {
+        flex: 1,
+        values: area,
+        className: 'slot5',
+        textAlign: 'left'
+      }],
+      slotstree: [{
+        flex: 1,
+        values: street,
+        className: 'slot1',
+        textAlign: 'center'
+      }]
     }
-
   },
   methods: {
-    onMyAddressChange (picker, values) {
-      if (myaddress[values[0]]) {  //这个判断类似于v-if的效果（可以不加，但是vue会报错，很不爽）
-        picker.setSlotValues(1, Object.keys(myaddress[values[0]])) // Object.keys()会返回一个数组，当前省的数组
-        picker.setSlotValues(2, myaddress[values[0]][values[1]]); // 区/县数据就是一个数组
-        this.myAddressProvince = values[0]
-        this.myAddressCity = values[1]
-        this.myAddresscounty = values[2]
-      }
-    }
-  },
-  mounted () {
-    this.$nextTick(() => { //vue里面全部加载好了再执行的函数  （类似于setTimeout）
-      this.myAddressSlots[0].defaultIndex = 0
-      // 这里的值需要和 data里面 defaultIndex 的值不一样才能够初始化
-      //因为我没有看过源码（我猜测是因为数据没有改变，不会触发更新）
-    })
+
   }
 }
 </script>
