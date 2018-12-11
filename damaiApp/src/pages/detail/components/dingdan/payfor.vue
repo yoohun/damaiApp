@@ -2,7 +2,7 @@
   <div class="payfor">
     <span class="payTitle">选择支付方式</span>
     <div class="payList">
-      <div class="border-bottom">
+      <div class="border-bottom" @click="chosepay">
         <div class="payImg">
           <img src="../../../../../static/imgs/zhifubao.png" alt="">
           <span>支付宝</span>
@@ -14,7 +14,7 @@
       </div>
       <div class="border-bottom">
         <div class="payImg">
-          <img src="../../../../../static/imgs/zhifubao.png" alt="">
+          <img src="../../../../../static/imgs/mayihuabei.png" alt="">
           <span>蚂蚁花呗分期</span>
         </div>
         <div>
@@ -24,18 +24,8 @@
       </div>
       <div class="border-bottom" v-show="!hidemore">
         <div class="payImg">
-          <img src="../../../../../static/imgs/zhifubao.png" alt="">
+          <img src="../../../../../static/imgs/weixin.png" alt="">
           <span>微信支付</span>
-        </div>
-        <div>
-          <span class="iconfont" v-show="!gouclick">&#xe642;</span>
-          <span class="iconfont clickdagou" v-show="gouclick">&#xe641;</span>
-        </div>
-      </div>
-      <div class="border-bottom" v-show="!hidemore">
-        <div class="payImg">
-          <img src="../../../../../static/imgs/zhifubao.png" alt="">
-          <span>电子钱包</span>
         </div>
         <div>
           <span class="iconfont" v-show="!gouclick">&#xe642;</span>
@@ -56,17 +46,15 @@ export default {
   data () {
     return {
       gouclick: false,
-      hidemore: true,
-      payList: [{name: '支付宝', payImg: '../../../../../static/imgs/zhifubao.png'},
-        {name: '蚂蚁花呗分期', payImg: '../../../../../static/imgs/mayihuabei.png'},
-        {name: '微信支付', payImg: '../../../../../static/imgs/weixin.png'},
-        {name: '电子钱包', payImg: '../../../../../static/imgs/dianziqianbao.png'}
-      ]
+      hidemore: true
     }
   },
   methods: {
     showotherway () {
       this.hidemore = !this.hidemore
+    },
+    chosepay () {
+      this.gouclick = !this.gouclick
     }
   }
 }

@@ -1,38 +1,41 @@
 <template>
   <div>
-    <div class="dingdanheader">
-      <router-link to="/detail/dingdan">
-        <span class="iconfont">&#xe625;</span>
-      </router-link>
-      <span class="xwTitle">新增收货地址</span>
-      <span>保存</span>
-    </div>
-    <div class="addressContent">
-      <form action="">
-        <div class="getPeople">
-          <span>收货人</span>
-          <input type="text" placeholder="请填写收货人姓名" id="shIpt">
-        </div>
-        <div class="phoneNum">
-          <span>手机号</span>
-          <input type="text" placeholder="a">
-        </div>
-        <div class="index">
-          <div class="page-content">
-            <mt-cell title="省市区:" :value="areaString" is-link @click.native="handlerArea"></mt-cell>
-            <mt-popup v-model="areaVisible" class="area-class" position="bottom">
-              <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
-            </mt-popup>
+    <div>
+      <div class="dingdanheader">
+        <router-link to="/detail/dingdan">
+          <span class="iconfont">&#xe625;</span>
+        </router-link>
+        <span class="xwTitle">新增收货地址</span>
+        <span @click="saveMessage">保存</span>
+      </div>
+      <div class="addressContent">
+        <form action="">
+          <div class="getPeople">
+            <span>收货人</span>
+            <input type="text" placeholder="请填写收货人姓名" id="shIpt" v-model="user">
           </div>
-        </div>
-        <div class="street">
-          <span>街道</span>
-        </div>
-        <div class="cleanAddress">
-          <textarea name=""  placeholder="请填写详细地址，不少于4个字" id="addressIpt"></textarea>
-        </div>
-      </form>
+          <div class="phoneNum">
+            <span>手机号</span>
+            <input type="text" placeholder='请填写你的手机号' v-model="userphone">
+          </div>
+          <div class="index">
+            <div class="page-content">
+              <mt-cell title="省市区:" :value="areaString" is-link @click.native="handlerArea"></mt-cell>
+              <mt-popup v-model="areaVisible" class="area-class" position="bottom">
+                <mt-picker :slots="slots" @change="onValuesChange"></mt-picker>
+              </mt-popup>
+            </div>
+          </div>
+          <div class="street">
+            <span>街道</span>
+          </div>
+          <div class="cleanAddress">
+            <textarea name=""  placeholder="请填写详细地址，不少于4个字" id="addressIpt" v-model="stree"></textarea>
+          </div>
+        </form>
+      </div>
     </div>
+    <div class="fullmsg">请填写完整的信息</div>
   </div>
 </template>
 
@@ -57,6 +60,10 @@ export default {
   name: 'dingdanaddress',
   data () {
     return {
+      useraddress: '',
+      user: '',
+      userphone: '',
+      stree: '',
       areaVisible: false,
       areaString: '请选择',
       slots: [{
@@ -101,7 +108,6 @@ export default {
         picker.setSlotValues(1, city)
         two = values[1]
       }
-
       index2 = city.indexOf(two)
       if (index2 >= 0 && city.length > 0) {
         area = data[index].childs[index2].childs.map(res => {
@@ -111,13 +117,22 @@ export default {
         three = values[2]
       }
       index3 = area.indexOf(three)
-      this.areaString = values.join(',')
+      this.areaString = values.join(' ')
+    },
+    saveMessage () {
+      if (this.user === '' || this.userphone === '' || this.useraddress === '') {
+        console.log('none')
+      }
+      this.useraddress = this.areaString + this.stree
+      console.log(this.useraddress)
     }
   }
 }
 </script>
 
 <style>
+  .fullmsg{
+  }
   .area-class {
     width: 100%;
     height: 50%;
