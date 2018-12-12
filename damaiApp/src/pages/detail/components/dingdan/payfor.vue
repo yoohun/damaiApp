@@ -1,35 +1,32 @@
 <template>
   <div class="payfor">
     <span class="payTitle">选择支付方式</span>
-    <div class="payList">
-      <div class="border-bottom" @click="chosepay">
-        <div class="payImg">
-          <img src="../../../../../static/imgs/zhifubao.png" alt="">
-          <span>支付宝</span>
+    <div class="payList"  @click="chosepay">
+      <div class="border-bottom" title="1">
+        <div class="payImg"  title="1">
+          <img src="../../../../../static/imgs/zhifubao.png" alt="" title="1">
+          <span  title="1">支付宝</span>
         </div>
         <div>
-          <span class="iconfont" v-show="!gouclick">&#xe642;</span>
-          <span class="iconfont clickdagou" v-show="gouclick">&#xe641;</span>
+          <span class="iconfont iconfontspan" :class="{iconfontclick:click==zfb}" title="1">&#xe63c;</span>
         </div>
       </div>
-      <div class="border-bottom">
-        <div class="payImg">
-          <img src="../../../../../static/imgs/mayihuabei.png" alt="">
-          <span>蚂蚁花呗分期</span>
+      <div class="border-bottom"  title="2">
+        <div class="payImg"  >
+          <img src="../../../../../static/imgs/mayihuabei.png" alt="" title="2">
+          <span  title="2">蚂蚁花呗分期</span>
         </div>
         <div>
-          <span class="iconfont" v-show="!gouclick">&#xe642;</span>
-          <span class="iconfont clickdagou" v-show="gouclick">&#xe641;</span>
+          <span class="iconfont iconfontspan" :class="{iconfontclick:click==my}" title="2">&#xe63c;</span>
         </div>
       </div>
-      <div class="border-bottom" v-show="!hidemore">
-        <div class="payImg">
-          <img src="../../../../../static/imgs/weixin.png" alt="">
-          <span>微信支付</span>
+      <div class="border-bottom" v-show="!hidemore"  title="3">
+        <div class="payImg"  title="3">
+          <img src="../../../../../static/imgs/weixin.png" alt="" title="3">
+          <span  title="3">微信支付</span>
         </div>
         <div>
-          <span class="iconfont" v-show="!gouclick">&#xe642;</span>
-          <span class="iconfont clickdagou" v-show="gouclick">&#xe641;</span>
+          <span class="iconfont  iconfontspan" :class="{iconfontclick:click==wx}" title="3">&#xe63c;</span>
         </div>
       </div>
     </div>
@@ -45,6 +42,10 @@ export default {
   name: 'payfor',
   data () {
     return {
+      zfb: 1,
+      my: 2,
+      wx: 3,
+      click: 0,
       gouclick: false,
       hidemore: true
     }
@@ -53,14 +54,36 @@ export default {
     showotherway () {
       this.hidemore = !this.hidemore
     },
-    chosepay () {
-      this.gouclick = !this.gouclick
+    chosepay (e) {
+      console.log(e)
+      let num = e.target.title
+      if (num === '1') {
+        this.click = 1
+      } else if (num === '2') {
+        this.click = 2
+      } else {
+        this.click = 3
+      }
     }
   }
 }
 </script>
 
 <style>
+.iconfontspan{
+  width: .42rem;
+  height: .42rem;
+  border: 1px solid #afafaf;
+  border-radius: .1rem;
+  font-size: .08rem;
+  line-height: .42rem;
+  text-align: center;
+  color: white;
+}
+.iconfontclick{
+  border: 1px solid deeppink;
+  color: deeppink;
+}
 .payfor{
   background: #ffffff;
   padding: .2rem .2rem 0;
@@ -91,21 +114,8 @@ export default {
   display: inline-block;
 }
 .payList div .iconfont{
-  font-size: .4rem;
-  margin-top: .1rem;
+  margin-top: .26rem;
   display: inline-block;
-}
-.payGou{
-  display: inline-block;
-  width: .5rem;
-  height: .5rem;
-  border: 1px solid deeppink;
-  border-radius: .15rem;
-  margin-top: .2rem;
-  box-sizing: border-box;
-}
-.payList div .clickdagou{
-  color: deeppink;
 }
 .otherway{
   line-height: 1rem;

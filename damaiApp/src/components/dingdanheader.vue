@@ -1,7 +1,7 @@
 <template>
   <div class="dingdanheader">
     <span class="iconfont" @click="linkclick">&#xe625;</span>
-    <span class="xwTitle">{{this.componenttitle}}</span>
+    <span class="xwTitle">订单确认</span>
   </div>
 </template>
 

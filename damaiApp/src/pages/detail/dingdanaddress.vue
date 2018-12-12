@@ -35,7 +35,7 @@
         </form>
       </div>
     </div>
-    <div class="fullmsg">请填写完整的信息</div>
+    <div class="fullmsg" v-show="fullms">请填写完整的信息</div>
   </div>
 </template>
 
@@ -60,6 +60,7 @@ export default {
   name: 'dingdanaddress',
   data () {
     return {
+      fullms: false,
       useraddress: '',
       user: '',
       userphone: '',
@@ -120,11 +121,16 @@ export default {
       this.areaString = values.join(' ')
     },
     saveMessage () {
-      if (this.user === '' || this.userphone === '' || this.useraddress === '') {
-        console.log('none')
+      console.log('点击')
+      if (this.user === '' || this.userphone === '' || this.stree === '') {
+        this.fullms = true
+      } else {
+        this.useraddress = this.areaString + this.stree
+        this.fullms = false
+        localStorage.setItem('address', this.useraddress)
+        this.$router.push('./dingdan')
+        console.log(this.useraddress)
       }
-      this.useraddress = this.areaString + this.stree
-      console.log(this.useraddress)
     }
   }
 }
@@ -132,6 +138,11 @@ export default {
 
 <style>
   .fullmsg{
+    margin-top: .5rem;
+    text-align: center;
+    line-height: .6rem;
+    font-size: .36rem;
+    color: red;
   }
   .area-class {
     width: 100%;

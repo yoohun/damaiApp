@@ -1,6 +1,6 @@
 <template>
   <div class="ticketdiv">
-    <dingdanheader :componenttitle="componenttitle" :linka="linka"></dingdanheader>
+    <ddheader></ddheader>
     <ticketcontent :title="title" :place="place" :detailtime="detailtime"></ticketcontent>
     <getticket></getticket>
     <getaddress></getaddress>
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import dingdanheader from '../../components/dingdanheader'
+import ddheader from './components/dingdan/ddheader'
 import ticketcontent from './components/dingdan/ticketcontent'
 import getticket from './components/dingdan/getticket'
 import getaddress from './components/dingdan/getaddress'
@@ -19,7 +19,7 @@ import dingdanbottom from './components/dingdan/dingdanbottom'
 export default {
   name: 'dingdan',
   components: {
-    dingdanheader,
+    ddheader,
     ticketcontent,
     getticket,
     getaddress,
@@ -28,8 +28,6 @@ export default {
   },
   data () {
     return {
-      componenttitle: '订单确认',
-      linka: 'detail',
       title: '',
       place: '',
       detailtime: '',

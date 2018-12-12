@@ -3,8 +3,9 @@
     <div class="adderssTop">
       <div class="getAddress">
         <span>收货地址</span>
-        <router-link to="/detail/dingdanaddress">
-          <span>点击添加收货地址 <span class="iconfont">&#xe631;</span></span>
+        <router-link to="/detail/dingdanaddress" class="addre">
+          <span v-show="!useraddress">点击添加收货地址 <span class="iconfont">&#xe631;</span></span>
+          <span v-show="useraddress">{{address}}</span>
         </router-link>
       </div>
       <div class="yunfei" v-show="shouyunfei">
@@ -24,7 +25,16 @@ export default {
   name: 'getaddress',
   data () {
     return {
-      shouyunfei: false
+      useraddress: false,
+      shouyunfei: false,
+      address: ''
+    }
+  },
+  mounted () {
+    this.address = localStorage.getItem('address')
+    if (this.address) {
+      this.useraddress = true
+      console.log(this.address)
     }
   }
 }
@@ -33,6 +43,9 @@ export default {
 <style>
   .adderssTop{
     margin-bottom: .2rem;
+  }
+  .addre{
+    color: #b5b5b5;
   }
   .getAddress{
     display: flex;
